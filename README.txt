@@ -5,7 +5,6 @@ Contains basic structure to build off of.
 
 //TREE
 +---timetable
-    ¦   tree.txt
     ¦   
     +---controller
     ¦       Run.java
