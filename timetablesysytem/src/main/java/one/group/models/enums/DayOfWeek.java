@@ -1,4 +1,4 @@
-package timetable.models.enums;
+package one.group.models.enums;
 
 public enum DayOfWeek {
     

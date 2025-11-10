@@ -1,4 +1,4 @@
-package timetable.models.rooms;
+package one.group.models.rooms;
 
 public abstract class Room {
 

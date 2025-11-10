@@ -1,4 +1,4 @@
-package timetable.models.people;
+package one.group.models.people;
 
  public abstract class Person{
     

@@ -1,4 +1,4 @@
-package timetable.viewer;
+package one.group.viewer;
 
 public class Interface {
     

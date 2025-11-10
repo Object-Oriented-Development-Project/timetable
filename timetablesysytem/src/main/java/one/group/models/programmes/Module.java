@@ -1,4 +1,4 @@
-package timetable.models.programmes;
+package one.group.models.programmes;
 
 public class Module {
     

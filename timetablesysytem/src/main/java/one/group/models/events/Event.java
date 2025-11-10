@@ -1,4 +1,4 @@
-package timetable.models.events;
+package one.group.models.events;
 import java.time.LocalTime;
 
 public abstract class Event {
