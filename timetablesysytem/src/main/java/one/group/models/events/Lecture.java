@@ -1,12 +1,12 @@
 package one.group.models.events;
 
-import one.group.models.people.StudentGroup;
-import one.group.models.programmes.Module;
-import one.group.models.rooms.Room;
-import one.group.models.people.Lecturer;
-
 import java.time.DayOfWeek;
 import java.time.LocalTime;
+
+import one.group.models.people.Group;
+import one.group.models.people.Lecturer;
+import one.group.models.programmes.Module;
+import one.group.models.rooms.Room;
 
 public class Lecture extends Event {
     /**
@@ -21,7 +21,7 @@ public class Lecture extends Event {
      * @param startTime
      * @param endTime
      */
-    public Lecture(Module module, Lecturer lecturer, Room room, StudentGroup group, DayOfWeek day, LocalTime startTime, LocalTime endTime){
+    public Lecture(Module module, Lecturer lecturer, Room room, Group group, DayOfWeek day, LocalTime startTime, LocalTime endTime){
 
         super("Event",module, lecturer, room, group, "Lecture", day, startTime, endTime);
 

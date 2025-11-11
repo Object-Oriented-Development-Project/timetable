@@ -1,13 +1,11 @@
 package one.group.models.events;
-import one.group.models.people.Lecturer;
-import one.group.models.people.StudentGroup;
-import one.group.models.programmes.Module;
-
-import one.group.models.rooms.Room;
-
 import java.time.DayOfWeek;
 import java.time.LocalTime;
-import java.util.List;
+
+import one.group.models.people.Group;
+import one.group.models.people.Lecturer;
+import one.group.models.programmes.Module;
+import one.group.models.rooms.Room;
 
 public abstract class Event {
     
@@ -18,7 +16,7 @@ public abstract class Event {
     private LocalTime endTime;
     private Lecturer lecturer;
     private Room room;
-    private StudentGroup group;
+    private Group group;
     private DayOfWeek day;
 
     /**
@@ -34,7 +32,7 @@ public abstract class Event {
      * @param endTime
      */
     public Event(String type, Module module, Lecturer lecturer,
-                 Room room, StudentGroup group, String typeOfEvent,
+                 Room room, Group group, String typeOfEvent,
                  DayOfWeek day, LocalTime startTime,
                  LocalTime endTime){
 
@@ -61,7 +59,7 @@ public abstract class Event {
      * Returns the specified student group
      * @return group
      */
-    public StudentGroup getGroup() {
+    public Group getGroup() {
         return group;
     }
 

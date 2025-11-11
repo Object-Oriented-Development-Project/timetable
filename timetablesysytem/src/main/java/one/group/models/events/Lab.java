@@ -1,11 +1,12 @@
 package one.group.models.events;
 
-import one.group.models.people.Lecturer;
-import one.group.models.people.StudentGroup;
-import one.group.models.programmes.Module;
-import one.group.models.rooms.Room;
 import java.time.DayOfWeek;
 import java.time.LocalTime;
+
+import one.group.models.people.Group;
+import one.group.models.people.Lecturer;
+import one.group.models.programmes.Module;
+import one.group.models.rooms.Room;
 
 public class Lab extends Event {
     /**
@@ -20,7 +21,7 @@ public class Lab extends Event {
      * @param startTime
      * @param endTime
      */
-    public Lab(Module module, Lecturer lecturer, Room room, StudentGroup group, DayOfWeek day, LocalTime startTime, LocalTime endTime){
+    public Lab(Module module, Lecturer lecturer, Room room, Group group, DayOfWeek day, LocalTime startTime, LocalTime endTime){
         super("Event", module, lecturer, room, group, "Lab",day,startTime,endTime);
 
         if(!room.isLab()){
