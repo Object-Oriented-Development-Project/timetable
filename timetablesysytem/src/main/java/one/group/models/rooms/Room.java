@@ -10,4 +10,15 @@ public abstract class Room {
         this.id = id;
         this.capacity = capacity;
     }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public boolean isClassroom(){
+        return type.equalsIgnoreCase("classroom");
+    }
+    public boolean isLab(){
+        return type.equalsIgnoreCase("lab");
+    }
 }
