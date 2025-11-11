@@ -4,8 +4,8 @@ import java.util.List;
 import one.group.models.people.Lecturer;
 import one.group.models.people.Student;
 /**
- * Represents a course.
- */
+* Represents a course.
+*/
 public class ProgrammeStructure {
     String courseID;
     String courseName;
@@ -17,33 +17,33 @@ public class ProgrammeStructure {
 
 
     /**
-     * Gets the course ID.
-     * @return courseID
-     */
+    * Gets the course ID.
+    * @return courseID
+    */
     public String getID(){
         return courseID;
     }
 
     /**
-     * Sets the course ID.
-     * @set courseID
-     */
+    * Sets the course ID.
+    * @set courseID
+    */
     public void setID(String newID){
         courseID = newID;
     }
 
     /**
-     * Gets the course name.
-     * @return courseName
-     */
+    * Gets the course name.
+    * @return courseName
+    */
     public String getCourseName(){
         return courseName;
     }
 
     /**
-     * Sets the course name.
-     * @set courseName
-     */
+    * Sets the course name.
+    * @set courseName
+    */
     public void setCourseName(String newName){
         courseName = newName;
     }
