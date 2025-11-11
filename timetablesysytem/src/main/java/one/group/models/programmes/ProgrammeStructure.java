@@ -1,10 +1,8 @@
 package one.group.models.programmes;
-import java.util.ArrayList;
 import java.util.List;
 
 import one.group.models.people.Lecturer;
 import one.group.models.people.Student;
-import one.group.models.people.StudentGroup;
 
 /**
 * Represents a course.
@@ -16,48 +14,7 @@ public class ProgrammeStructure {
     List<Lecturer> lecturers;
     List<Student> students;
     List<Year> years;
-    private List<StudentGroup> groups = new ArrayList<>();
     //List<Timetable> timetables;
-
-    /**
-     * Gets list of student groups
-     * @return groups
-     */
-    public List<StudentGroup> getGroups() {
-        return List.copyOf(groups);
-    }
-
-    /**
-     * Splits the list of students into subgroups based on the specified maximum group size
-     *
-     * @param maxGroupSize the maximum number of students allowed in each subgroup
-     * @throws IllegalArgumentException if maxGroupSize is less than 1 or there are no students
-     */
-    public void createGroupsByCapacity(int maxGroupSize){
-
-        if(maxGroupSize<1) {
-            throw new IllegalArgumentException("Maximum group size must be at least 1.");
-        }
-
-        if(students==null || students.isEmpty()){
-            throw new IllegalStateException("No students available to group.");
-        }
-
-        groups.clear();
-        int total = students.size();
-        int index = 0;
-        int groupNum = 1;
-
-        while(index < total){
-            int end = Math.min(index + maxGroupSize, total);
-            List<Student> sublist = students.subList(index, end);
-            groups.add(new StudentGroup(courseID + "-G" + groupNum, "Group "+groupNum, sublist));
-
-
-            groupNum++;
-            index = end;
-        }
-    }
 
     /**
     * Gets the course ID.
