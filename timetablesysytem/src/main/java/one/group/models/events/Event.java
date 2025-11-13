@@ -1,7 +1,7 @@
 package one.group.models.events;
 import java.time.DayOfWeek;
 import java.time.LocalTime;
-
+import java.util.Objects;
 import one.group.models.people.Group;
 import one.group.models.people.Lecturer;
 import one.group.models.programmes.Module;
@@ -46,6 +46,8 @@ public abstract class Event {
         this.startTime = startTime;
         this.endTime = endTime;
     }
+
+    // Getters
 
     /**
      * Returns the type of the event
@@ -118,4 +120,51 @@ public abstract class Event {
     public LocalTime getEndTime() {
         return endTime;
     }
-}
+
+    // Methods
+
+    /**
+     * Checks whether this event overlaps with another event
+     * <p>
+     * Two events are considered overlapping if they occur on the same day,
+     * their time intervals intersect, and they share either the same lecturer, room or group.
+     * </p>
+     * @param other the other event to check for overlap with
+     * @return {@code true} if the events overlap in time and have a conflicting lecturer, room, or group;
+     *         {@code false} otherwise
+     */
+    public boolean overlapsWith(Event other){
+        if(this.day != other.day) return false; // if days are different - no conflict
+
+        boolean timeOverlap = this.startTime.isBefore(other.endTime) && other.startTime.isBefore(this.endTime);
+        boolean lecturerConflict = this.lecturer.equals(other.lecturer);
+        boolean roomConflict = this.room.equals(other.room);
+        boolean groupConflict = this.group.equals(other.group);
+
+        return timeOverlap && (lecturerConflict || roomConflict || groupConflict);
+
+    }
+
+    // Equality / Hashing
+
+    /**
+     * Compares this event to another object for equality
+     * <p>
+     *     Two events are considered equal if they have the same module, occur on the same day,
+     *     start at the same time, and are in the same room.
+     * </p>
+     * @param obj   the reference object with which to compare.
+     * @return {@code true} if the given object is an Event with the same module, day, start time and room;
+     *         {@code false} otherwise
+     */
+    @Override
+    public boolean equals(Object obj){
+        if(this == obj) return true;
+        if(!(obj instanceof Event)) return false;
+        Event other = (Event) obj;
+        return Objects.equals(module, other.module) && day == other.day && Objects.equals(startTime, other.startTime) && Objects.equals(room, other.room);
+        }
+
+    }
+
+
