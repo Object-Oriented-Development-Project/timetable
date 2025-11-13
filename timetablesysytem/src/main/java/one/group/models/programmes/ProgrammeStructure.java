@@ -3,6 +3,7 @@ import java.util.List;
 
 import one.group.models.people.Lecturer;
 import one.group.models.people.Student;
+
 /**
 * Represents a course.
 */
@@ -14,7 +15,6 @@ public class ProgrammeStructure {
     List<Student> students;
     List<Year> years;
     //List<Timetable> timetables;
-
 
     /**
     * Gets the course ID.
