@@ -1,4 +1,5 @@
 package one.group.models.programmes;
+
 import one.group.models.people.Lecturer;
 import one.group.models.people.StudentGroup;
 import one.group.models.user_timetable.Timetable;

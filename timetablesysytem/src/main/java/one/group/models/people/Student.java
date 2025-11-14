@@ -4,6 +4,6 @@ public class Student extends Person {
     /**Create Student. */
     public Student(String name, String id){
         
-        super(name, id, "student");
+        super(name, id);
     }
 }
