@@ -1,10 +1,11 @@
 package one.group.models.user_timetable;
-import java.util.ArrayList;
 
-import one.group.models.events.Event;
+import java.util.List;
+
+import one.group.models.programmes.Day;
 
 public class Timetable {
-    private ArrayList<Event> timetable;
+    private List<Day> timetable;
     private String id;
     
 }

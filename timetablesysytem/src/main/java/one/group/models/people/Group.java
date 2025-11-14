@@ -1,6 +1,8 @@
 /** The base abstract class to represent a group of people. */
 package one.group.models.people;
+
 import java.util.List;
+
 public class Group<E extends Person> {
     private String groupId;
     private String name;

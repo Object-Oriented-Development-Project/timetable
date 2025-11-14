@@ -6,6 +6,7 @@ import java.time.LocalTime;
 import one.group.models.people.Group;
 import one.group.models.people.Lecturer;
 import one.group.models.programmes.Module;
+import one.group.models.rooms.Classroom;
 import one.group.models.rooms.Room;
 
 public class Lecture extends Event {
@@ -25,7 +26,7 @@ public class Lecture extends Event {
 
         super("Event",module, lecturer, room, group, "Lecture", day, startTime, endTime);
 
-        if(!room.isClassroom()){
+        if(!(room instanceof Classroom)) {
             throw new IllegalArgumentException("Lecture must be scheduled in a classroom");
 
         }

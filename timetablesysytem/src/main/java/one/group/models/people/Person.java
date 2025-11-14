@@ -12,9 +12,8 @@ package one.group.models.people;
      * Creates Person object with specified name, id and typeOfPerson.
      * @param name
      * @param id
-     * @param typeOfPerson
      */
-    public Person(String name, String id, String typeOfPerson){
+    public Person(String name, String id){
         this.name = name;
         this.id = id;
     }

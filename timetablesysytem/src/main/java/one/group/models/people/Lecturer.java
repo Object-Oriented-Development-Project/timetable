@@ -4,6 +4,6 @@ public class Lecturer extends Person {
 
     public Lecturer(String name, String id){
         
-        super(name, id, "student");
+        super(name, id);
     }
 }
