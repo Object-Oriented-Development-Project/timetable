@@ -1,3 +1,4 @@
+/** The base abstract class to represent a group of people. */
 package one.group.models.people;
 import java.util.List;
 public class Group<E extends Person> {
@@ -53,23 +54,42 @@ public class Group<E extends Person> {
     }
 -----> */
 
+    /**
+     * Returns the groups id.
+     * @return groupId
+     */
     public String getGroupId() {
         return groupId;
     }
 
+    /**
+     * Returns the name of the group.
+     * @return name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Returns a List containing the people in the group.
+     * @return people
+     */
     public List<E> getPeople() {
         return people;
     }
 
+    /**
+     * Returns the size of the group.
+     * @return people.size();
+     */
     public int size(){
         return people.size();
 
     }
 
+    /**
+     * To String method returning the groups info.
+     */
     @Override
     public String toString(){
         return name + groupId + " ("+ people.size() + " people)";
