@@ -3,18 +3,18 @@ import java.util.List;
 
 import one.group.models.people.Lecturer;
 import one.group.models.people.Student;
+import one.group.models.user_timetable.Timetable;
 
 /**
-* Represents a course.
-*/
+* /** Class representing a course. */
 public class ProgrammeStructure {
-    String courseID;
-    String courseName;
-    List<Module> modules;
-    List<Lecturer> lecturers;
-    List<Student> students;
-    List<Year> years;
-    //List<Timetable> timetables;
+    private String courseID;
+    private String courseName;
+    private List<Module> modules;
+    private List<Lecturer> lecturers;
+    private List<Student> students;
+    private List<Year> years;
+    private Timetable timetable;
 
     /**
     * Gets the course ID.
@@ -50,7 +50,7 @@ public class ProgrammeStructure {
 
     /**
     * Returns a copy of modules.
-    * @Returns a copy of modules
+    * @return a copy of modules
     */
     public List<Module> getModules(){
         return List.copyOf(modules);
@@ -58,7 +58,7 @@ public class ProgrammeStructure {
 
     /**
     * Returns the reference to modules.
-    * @Returns modules
+    * @return modules
     */
     public List<Module> getModulesEdit(){
         return modules;
@@ -66,7 +66,7 @@ public class ProgrammeStructure {
 
     /**
     * Returns a copy of lecturers.
-    * @Returns a copy of lecturers
+    * @return a copy of lecturers
     */
     public List<Lecturer> getLecturers(){
         return List.copyOf(lecturers);
@@ -74,7 +74,7 @@ public class ProgrammeStructure {
 
     /**
     * Returns the reference to lecturers.
-    * @Returns lecturers
+    * @return lecturers
     */
     public List<Lecturer> getLecturersEdit(){
         return lecturers;
@@ -82,7 +82,7 @@ public class ProgrammeStructure {
 
     /**
     * Returns a copy of students.
-    * @Returns a copy of students
+    * @return a copy of students
     */
     public List<Student> getStudents(){
         return List.copyOf(students);
@@ -90,7 +90,7 @@ public class ProgrammeStructure {
 
     /**
     * Returns the reference to students.
-    * @Returns students
+    * @return students
     */
     public List<Student> getStudentsEdit(){
         return students;
@@ -98,7 +98,7 @@ public class ProgrammeStructure {
 
     /**
     * Returns a copy of years.
-    * @Returns a copy of years
+    * @return a copy of years
     */
     public List<Year> getYears(){
         return List.copyOf(years);
@@ -106,9 +106,16 @@ public class ProgrammeStructure {
 
     /**
     * Returns the reference to years.
-    * @Returns years
+    * @return years
     */
     public List<Year> getYearsEdit(){
         return years;
+    }
+
+    /**
+     * 
+     */
+    public Timetable getTimetable(){
+        return timetable;
     }
 }
