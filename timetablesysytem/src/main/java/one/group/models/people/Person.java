@@ -12,8 +12,8 @@ package one.group.models.people;
     
     /**
      * Creates Person object with specified name, id and typeOfPerson.
-     * @param name
-     * @param id
+     * @param name the persons name
+     * @param id the persons id
      */
     public Person(String name, String id){
         this.name = name;
@@ -22,7 +22,7 @@ package one.group.models.people;
 
     /**
      * Returns the name of the Person.
-     * @return name
+     * @return name the persons name
      */
     public String getName(){
         return name;
@@ -30,7 +30,7 @@ package one.group.models.people;
 
     /**
      * Returns the ID of the Person.
-     * @return id
+     * @return id the persons id
      */
     public String getID(){
         return id;
@@ -38,7 +38,7 @@ package one.group.models.people;
 
     /**
      * Returns whether of not the Perosn is an Admin.
-     * @return isAdmin
+     * @return isAdmin the persons admin status
      */
     public boolean getIsAdmin(){
         return isAdmin;
@@ -46,7 +46,7 @@ package one.group.models.people;
 
     /**
      * Sets the Admin status of a person with the boolean parameter given.
-     * @param truthValue
+     * @param truthValue a true or false value
      */
     public void setIsAdmin(boolean truthValue){
         isAdmin = truthValue;

@@ -1,23 +1,42 @@
 package one.group.models.enums;
 
-/** Simple enum for representing the days of the week across classes, includes a field for 
- * whether or not it is a weekend.
+/**
+ * Simple enum for representing the days of the week across classes,
+ * includes a field for whether or not it is a weekend.
  */
 public enum DayOfWeek {
-    
-    MONDAY(false), TUESDAY(false), WEDNESDAY(false), THURSDAY(false), FRIDAY(false),
-    SATURDAY(true), SUNDAY(true);
+
+    /** Monday, not a weekend */
+    MONDAY(false),
+    /** Tuesday, not a weekend */
+    TUESDAY(false),
+    /** Wednesday, not a weekend */
+    WEDNESDAY(false),
+    /** Thursday, not a weekend */
+    THURSDAY(false),
+    /** Friday, not a weekend */
+    FRIDAY(false),
+    /** Saturday, weekend */
+    SATURDAY(true),
+    /** Sunday, weekend */
+    SUNDAY(true);
 
     /** A truth value for whether or not a day is a weekend. */
     private final boolean isWeekend;
     
-    /** A  constructor with the enums fields.*/
+    /**
+     * Constructs the enum with its weekend flag.
+     * @param isWeekend whether the day is a weekend
+     */
     private DayOfWeek(boolean isWeekend) {
         this.isWeekend = isWeekend;
     }
 
-    /** A method to retrieve the isWeekend value. */
-    public boolean isWeekend(){
+    /**
+     * Retrieves whether the day is a weekend.
+     * @return true if the day is a weekend
+     */
+    public boolean isWeekend() {
         return isWeekend;
     }
 }

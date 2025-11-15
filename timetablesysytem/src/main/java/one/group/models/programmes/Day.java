@@ -8,12 +8,14 @@ import one.group.models.events.Event;
 /**Class representing a day. */
 public class Day {
 
+    /** A list of events */
     private List<Event> events;
+    /** The day of the week */
     private String day;
     
     /**
      * Returns the day of the week.
-     * @return day
+     * @return day the day of the week
      */
     public String getDay(){
         return day;
@@ -21,7 +23,7 @@ public class Day {
 
     /**
      * Returns a copy of the list of events for the day.
-     * @return copyOf(events)
+     * @return copyOf(events) a copy of the list of events for the day
      */
     public List<Event> getEvents(){
         return List.copyOf(events);
@@ -29,7 +31,7 @@ public class Day {
 
     /**
      * Returns the List of events for the day.
-     * @return events
+     * @return events the list of events for the day
      */
     public List<Event> getEventsToEdit(){
         return events;

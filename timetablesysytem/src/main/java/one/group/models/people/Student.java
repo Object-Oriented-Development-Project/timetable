@@ -3,7 +3,10 @@ package one.group.models.people;
 public class Student extends Person {
     
     
-    /**Create Student. */
+    /**Create Student.
+     * @param name the students name
+     * @param id the students id
+     */
     public Student(String name, String id){
         super(name, id);
     }
