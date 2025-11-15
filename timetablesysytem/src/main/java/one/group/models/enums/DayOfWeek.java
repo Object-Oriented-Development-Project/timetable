@@ -8,11 +8,10 @@ public enum DayOfWeek {
     private final boolean isWeekend;
 
     private DayOfWeek(boolean isWeekend) {
-    this.isWeekend = isWeekend;
+        this.isWeekend = isWeekend;
     }
 
     public boolean isWeekend(){
         return isWeekend;
     }
-
 }

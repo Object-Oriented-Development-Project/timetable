@@ -9,7 +9,6 @@ import one.group.models.rooms.Room;
 
 public abstract class Event {
     
-    private String type = "event";
     private Module module;
     private String typeOfEvent;
     private LocalTime startTime;
@@ -36,7 +35,6 @@ public abstract class Event {
                  DayOfWeek day, LocalTime startTime,
                  LocalTime endTime){
 
-        this.type=type;
         this.module=module;
         this.lecturer = lecturer;
         this.room = room;
@@ -61,14 +59,6 @@ public abstract class Event {
      */
     public Group getGroup() {
         return group;
-    }
-
-    /**
-     * Returns the type of event
-     * @return type
-     */
-    public String getType(){
-        return type;
     }
 
     /**
