@@ -3,11 +3,14 @@ package one.group.models.user_timetable;
 import java.util.List;
 
 import one.group.models.programmes.Day;
-
+/**A class representing a timetable, used by all classes who can own a timetable. */
 public class Timetable {
     private List<Day> timetable;
     private String id;
     
+    /** Constructs the timetable and gives it the id of the owner of the timetable.
+     * @param id
+     */
     public Timetable(String id){
         this.id = id;
     }

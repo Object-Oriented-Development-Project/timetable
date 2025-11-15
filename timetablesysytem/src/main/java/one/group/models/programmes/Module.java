@@ -6,10 +6,13 @@ import one.group.models.user_timetable.Timetable;
 
 /** Class representing a module. */
 public class Module {
-    
+    /** The id of the module. */
     private String id;
+    /** The lecturer associated with the module. */
     private Lecturer lecturer;
+    /** The group of students associated with the module. */
     private StudentGroup studentGroup;
+    /**The timetable for the module. */
     private Timetable timetable;
 
 }

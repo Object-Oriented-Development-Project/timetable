@@ -3,9 +3,11 @@ package one.group.models.people;
  * The base abstract class for representing a person.
  */
  public abstract class Person{
-    
+    /** The name of the person. */
     private String name;
+    /** The id of the person. */
     private String id;
+    /** The persons admin status. */
     private boolean  isAdmin = false;
     
     /**

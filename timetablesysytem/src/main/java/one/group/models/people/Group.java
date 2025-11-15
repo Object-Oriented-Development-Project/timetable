@@ -4,10 +4,14 @@ package one.group.models.people;
 import java.util.List;
 
 public class Group<E extends Person> {
+    /** The id of the group. */
     private String groupId;
+    /** The name of the group. */
     private String name;
+    /** A list of people, can take a person of any type. */
     private List<E> people;
 
+    /** A constructor to create a group, takes the groupId, name and a list of people. */
     public Group(String groupId, String name, List<E> people){
         this.groupId=groupId;
         this.name = name;

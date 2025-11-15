@@ -9,12 +9,19 @@ import one.group.models.user_timetable.Timetable;
 /**
  *  Class representing a course. */
 public class ProgrammeStructure {
+    /** The id of the course. */
     private String courseID;
+    /** The name of the course. */
     private String courseName;
+    /** The list of modules for the course. */
     private List<Module> modules;
+    /** The list of lecturers associated with the course. */
     private List<Lecturer> lecturers;
+    /** The list of students associated with the course. */
     private List<Student> students;
+    /** A list containing all of the year objects for the course. */
     private List<Year> years;
+    /** The timetable for the course. */
     private Timetable timetable;
 
     /**
