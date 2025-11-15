@@ -4,6 +4,7 @@ public abstract class Room {
 
     private String id;
     private int capacity;
+    private List <TimetableSlot> bookings;
 
     public Room(String id, int capacity){
         this.id = id;
