@@ -9,7 +9,7 @@ import one.group.models.user_timetable.Timetable;
 /** Class representing a course. */
 public class ProgramStructure {
     /** The id of the course. */
-    private String courseID;
+    private String id;
     /** The name of the course. */
     private String courseName;
     /** The list of modules for the course. */
@@ -25,10 +25,10 @@ public class ProgramStructure {
 
     /**
     * Gets the course ID.
-    * @return courseID the course id
+    * @return id the course id
     */
     public String getID(){
-        return courseID;
+        return id;
     }
 
     /**
@@ -36,7 +36,7 @@ public class ProgramStructure {
     * @param newID the new course id
     */
     public void setID(String newID){
-        courseID = newID;
+        id = newID;
     }
 
     /**
