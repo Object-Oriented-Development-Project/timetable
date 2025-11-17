@@ -7,7 +7,7 @@ import one.group.models.people.Student;
 import one.group.models.user_timetable.Timetable;
 
 /** Class representing a course. */
-public class ProgrammeStructure {
+public class ProgramStructure {
     /** The id of the course. */
     private String courseID;
     /** The name of the course. */

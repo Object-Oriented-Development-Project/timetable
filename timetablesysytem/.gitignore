@@ -16,6 +16,7 @@
 *.nar
 *.ear
 *.zip
+!interim-design-docs-submission.zip
 *.tar.gz
 *.rar
 
