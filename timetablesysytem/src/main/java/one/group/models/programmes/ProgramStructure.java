@@ -4,7 +4,7 @@ import java.util.List;
 
 import one.group.models.people.Lecturer;
 import one.group.models.people.Student;
-import one.group.models.user_timetable.Timetable;
+import one.group.models.user_timetable.Table;
 
 /** Class representing a course. */
 public class ProgramStructure {
@@ -21,7 +21,7 @@ public class ProgramStructure {
     /** A list containing all of the year objects for the course. */
     private List<Year> years;
     /** The timetable for the course. */
-    private Timetable timetable;
+    private Table timetable;
 
     /**
     * Gets the course ID.
@@ -123,7 +123,7 @@ public class ProgramStructure {
      * Returns the timetable.
      * @return  timetable the timetable
      */
-    public Timetable getTimetable(){
+    public Table getTimetable(){
         return timetable;
     }
 }

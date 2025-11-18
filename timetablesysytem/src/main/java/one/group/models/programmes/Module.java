@@ -2,7 +2,7 @@ package one.group.models.programmes;
 
 import one.group.models.people.Lecturer;
 import one.group.models.people.StudentGroup;
-import one.group.models.user_timetable.Timetable;
+import one.group.models.user_timetable.Table;
 
 /** Class representing a module. */
 public class Module {
@@ -13,6 +13,6 @@ public class Module {
     /** The group of students associated with the module. */
     private StudentGroup studentGroup;
     /**The timetable for the module. */
-    private Timetable timetable;
+    private Table timetable;
 
 }
