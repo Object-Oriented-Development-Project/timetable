@@ -1,12 +1,13 @@
 package one.group.models.user_timetable;
-
 import java.util.List;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 import one.group.models.programmes.Day;
 /**A class representing a timetable, used by all classes who can own a timetable. */
 public class Timetable {
     /** The list of days in the timetable */
-    private List<Day> timetable;
+    private ArrayList<String> timetable;
     /** The id of the timetable, which is that of the timetable owner */
     private String id;
     
@@ -17,20 +18,17 @@ public class Timetable {
         this.id = id;
     }
 
-    /**
-     * Returns a copy of a timetable.
-     * @return timetable the timetable
-     */
-    public List<Day> getTimetableToEdit(){
-        return timetable;
+    public Timetable(String id, String filePath) throws FileNotFoundException{
+        this.id = id;
+        this.timetable = CSVReader.readToArrayList(filePath);
     }
 
     /**
      * Returns a copy of a timetable.
-     * @return copyOf(timetable) a copy of the timetable
+     * @return timetable the timetable
      */
-    public List<Day> getTimetable(){
-        return List.copyOf(timetable);
+    public ArrayList<String> getTimetableToEdit(){
+        return timetable;
     }
 
     /**

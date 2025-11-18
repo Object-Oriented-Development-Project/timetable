@@ -10,6 +10,14 @@ import java.util.Scanner;
  */
 public class CSVReader {
 
+    public String coursesTable = "courses.csv";
+    public String facultiesTable = "faculties.csv";
+    public String lecturersTable = "lecturers.csv";
+    public String modulesTable = "modules.csv";
+    public String roomsTable = "rooms.csv";
+    public String studentsTable = "students.csv";
+    public String termsTable = "terms.csv";
+
     /** 
      * Default constructor. No parameters needed since all methods are static.
      */
