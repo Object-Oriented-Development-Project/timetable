@@ -10,19 +10,18 @@ import java.util.Scanner;
  */
 public class CSVReader {
 
-    public String coursesTable = "courses.csv";
-    public String facultiesTable = "faculties.csv";
-    public String lecturersTable = "lecturers.csv";
-    public String modulesTable = "modules.csv";
-    public String roomsTable = "rooms.csv";
-    public String studentsTable = "students.csv";
-    public String termsTable = "terms.csv";
+    public static final String COURSES_TABLE = "courses.csv";
+    public static final String FACULTIES_TABLE = "faculties.csv";
+    public static final String LECTURERS_TABLE = "lecturers.csv";
+    public static final String MODULES_TABLE = "modules.csv";
+    public static final String ROOMS_TABLE = "rooms.csv";
+    public static final String STUDENTS_TABLE = "students.csv";
+    public static final String TERMS_TABLE = "terms.csv";       
 
     /** 
      * Default constructor. No parameters needed since all methods are static.
      */
-    public CSVReader() {
-
+    private CSVReader(){
     }
     
     /**
