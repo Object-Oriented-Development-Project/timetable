@@ -1,1 +1,12 @@
+file="Rooms.csv"
 
+echo "Room ID,Capacity,Building,Type" > "$file"
+
+Room ID=("CS3004B","HSG037","FG042")
+Capacity=(40,90,25)
+Building=("Computer Science","Health Science","Foundation")
+Type=("Lab","Lecture","Tutorial")
+
+for i in "${!Room ID[@]}"; do
+     echo "${Room ID[i]},${Capacity[i]},${Building[i]},${Type[i]}" >> "$file"
+done
