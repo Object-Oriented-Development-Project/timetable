@@ -2,8 +2,9 @@ package one.group.models.rooms;
 import java.util.ArrayList;
 
 import one.group.models.interfaces.GetID;
+import one.group.models.interfaces.GetTimetable;
 
-public abstract class Room implements GetID{
+public abstract class Room implements GetID, GetTimetable{
 
     private String roomID;
     private int capacity;
@@ -20,5 +21,9 @@ public abstract class Room implements GetID{
 
     public String getID(){
         return roomID;
+    }
+
+    public ArrayList getTimetable(){
+        throw new UnsupportedOperationException("Not implemented yet");
     }
 }

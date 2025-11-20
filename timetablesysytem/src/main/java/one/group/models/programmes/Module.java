@@ -3,11 +3,12 @@ package one.group.models.programmes;
 import java.util.ArrayList;
 
 import one.group.models.interfaces.GetID;
+import one.group.models.interfaces.GetTimetable;
 import one.group.models.people.Lecturer;
 import one.group.models.people.StudentGroup;
 
 /** Class representing a module. */
-public class Module implements GetID {
+public class Module implements GetID, GetTimetable {
     /** The id of the module. */
     private String id;
     /** The lecturer associated with the module. */
@@ -20,5 +21,7 @@ public class Module implements GetID {
     public String getID(){
         return id;
     }
-
+    public ArrayList getTimetable(){
+    throw new UnsupportedOperationException("Not implemented yet");
+    }
 }

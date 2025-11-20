@@ -7,9 +7,9 @@ file="faculties.csv"
 echo "Faculty ID, Building" > "$file"
 
 # Example data as arrays
-id=()
-name=()
-faculty=()
+id=("CSIS" "ENG" "SCI")
+name=("Computer Science and Information Systems" "Engineering" "Science")
+building=("CSG" "EG" "KBG")
 
 # Loop through data and append to CSV
 for i in "${!id@]}"; do

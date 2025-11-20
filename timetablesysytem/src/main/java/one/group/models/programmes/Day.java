@@ -3,7 +3,7 @@ package one.group.models.programmes;
 import java.util.ArrayList;
 import java.util.List;
 
-import one.group.models.events.Event;
+import one.group.models.interfaces.events.Event;
 
 
 /**Class representing a day. */

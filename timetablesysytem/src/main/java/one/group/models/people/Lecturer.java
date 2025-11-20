@@ -1,5 +1,7 @@
 package one.group.models.people;
 
+import java.util.ArrayList;
+
 /** The class to represent a lecturer. */
 public class Lecturer extends Person {
     
@@ -10,5 +12,9 @@ public class Lecturer extends Person {
      */
     public Lecturer(String name, String id){
         super(name, id);
+    }
+
+    public ArrayList getTimetable(){
+    throw new UnsupportedOperationException("Not implemented yet");
     }
 }
