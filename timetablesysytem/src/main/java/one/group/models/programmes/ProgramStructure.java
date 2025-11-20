@@ -1,10 +1,10 @@
 package one.group.models.programmes;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import one.group.models.people.Lecturer;
 import one.group.models.people.Student;
-import one.group.models.user_timetable.Table;
 
 /** Class representing a course. */
 public class ProgramStructure {
@@ -21,7 +21,7 @@ public class ProgramStructure {
     /** A list containing all of the year objects for the course. */
     private List<Year> years;
     /** The timetable for the course. */
-    private Table timetable;
+   private ArrayList<String> table;
 
     /**
     * Gets the course ID.
@@ -123,7 +123,7 @@ public class ProgramStructure {
      * Returns the timetable.
      * @return  timetable the timetable
      */
-    public Table getTimetable(){
-        return timetable;
+    public ArrayList<String> getTimetable(){
+        return table;
     }
 }

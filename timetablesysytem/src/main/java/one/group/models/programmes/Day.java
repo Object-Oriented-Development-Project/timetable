@@ -1,5 +1,6 @@
 package one.group.models.programmes;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import one.group.models.events.Event;
@@ -12,6 +13,7 @@ public class Day {
     private List<Event> events;
     /** The day of the week */
     private String day;
+    private ArrayList<String> table;
     
     /**
      * Returns the day of the week.

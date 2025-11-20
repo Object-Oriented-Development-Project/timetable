@@ -1,4 +1,7 @@
 package one.group.models.people;
+
+import java.util.ArrayList;
+
 /**
  * The base abstract class for representing a person.
  */
@@ -9,6 +12,8 @@ package one.group.models.people;
     private String id;
     /** The persons admin status. */
     private boolean  isAdmin = false;
+    /** The persons timetable */
+    private ArrayList<String> table;
     
     /**
      * Creates Person object with specified name, id and typeOfPerson.

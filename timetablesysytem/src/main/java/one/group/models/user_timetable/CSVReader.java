@@ -8,15 +8,7 @@ import java.util.Scanner;
 /**
  * Utility class for reading CSV files. All methods are static.
  */
-public class CSVReader {
-
-    public static final String COURSES_TABLE = "courses.csv";
-    public static final String FACULTIES_TABLE = "faculties.csv";
-    public static final String LECTURERS_TABLE = "lecturers.csv";
-    public static final String MODULES_TABLE = "modules.csv";
-    public static final String ROOMS_TABLE = "rooms.csv";
-    public static final String STUDENTS_TABLE = "students.csv";
-    public static final String TERMS_TABLE = "terms.csv";       
+public class CSVReader {     
 
     /** 
      * Default constructor. No parameters needed since all methods are static.

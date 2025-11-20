@@ -6,9 +6,7 @@ import java.io.PrintWriter;
 
 public class CSVWriter{
     
-    public CSVWriter(){
-
-    }
+    public CSVWriter(){}
 
     public static void writeToFile(String input, File fileToUpdate) throws FileNotFoundException {
         try(PrintWriter writeTo = new PrintWriter(fileToUpdate)){
