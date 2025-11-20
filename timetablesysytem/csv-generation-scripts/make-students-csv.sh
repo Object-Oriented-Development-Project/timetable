@@ -4,7 +4,7 @@
 file="students.csv"
 
 # Write headers
-echo "id, name, course, year" > "$file"
+echo "ID, Name, Course, Year" > "$file"
 
 # Example data as arrays
 id=()

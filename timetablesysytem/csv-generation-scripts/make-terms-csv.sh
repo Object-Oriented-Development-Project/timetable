@@ -4,13 +4,14 @@
 file="terms.csv"
 
 # Write headers
-echo "id, module, lecturer, students, year" > "$file"
+echo "MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY" > "$file"
 
 # Example data as arrays
-module=()
-lecturer()
-students=()
-year()
+MONDAY=()
+TUESDAY=()
+WEDNESDAY=()
+THURSDAY=()
+FRIDAY=()
 
 # Loop through data and append to CSV
 for i in "${!id@]}"; do

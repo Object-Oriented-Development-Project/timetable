@@ -4,7 +4,7 @@
 file="modules.csv"
 
 # Write headers
-echo "id, lecturer, students, lecture hours, lab hours, tutorial hours" > "$file"
+echo "Module ID, Lecturer, Student Group, Lecture Hours, Lab Hours, Tutorial hours" > "$file"
 
 # Example data as arrays
 id=()

@@ -4,7 +4,7 @@
 file="faculties.csv"
 
 # Write headers
-echo "id, building" > "$file"
+echo "Faculty ID, Building" > "$file"
 
 # Example data as arrays
 id=()
@@ -13,5 +13,5 @@ faculty=()
 
 # Loop through data and append to CSV
 for i in "${!id@]}"; do
-    echo "${id[i]},${name[i]},${faculty[i]}" >> "$file"
+    echo "${Faculty ID[i]},${Building[i]}" >> "$file"
 done

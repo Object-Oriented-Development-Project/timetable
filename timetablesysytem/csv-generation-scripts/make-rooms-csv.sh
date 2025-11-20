@@ -4,7 +4,7 @@
 file="rooms.csv"
 
 # Write headers
-echo "id, type, capacity, building" > "$file"
+echo "Room ID, Room Type, Capacity, Building" > "$file"
 
 # Example data as arrays
 id=()
