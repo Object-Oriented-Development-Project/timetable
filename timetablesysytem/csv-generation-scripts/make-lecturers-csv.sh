@@ -12,6 +12,6 @@ name=()
 faculty=()
 
 # Loop through data and append to CSV
-for i in "${!names[@]}"; do
+for i in "${!id@]}"; do
     echo "${id[i]},${name[i]},${faculty[i]}" >> "$file"
 done

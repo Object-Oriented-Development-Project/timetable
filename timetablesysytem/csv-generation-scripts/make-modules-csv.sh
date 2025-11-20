@@ -14,6 +14,6 @@ lectureHours=()
 labHours=()
 tutorialHours=()
 # Loop through data and append to CSV
-for i in "${!names[@]}"; do
-    echo "${id[i]},${lecturer[i]},${studentGroup[i]},${lectureHours[i]},${labHours=()[i]},${tutorialHours[i]}," >> "$file"
+for i in "${!id@]}"; do
+    echo "${id[i]},${lecturer[i]},${studentGroup[i]},${lectureHours[i]},${labHours[i]},${tutorialHours[i]}," >> "$file"
 done
