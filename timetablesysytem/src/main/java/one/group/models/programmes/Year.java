@@ -16,7 +16,7 @@ public class Year implements  Table{
     /** The list of terms for this year. */
     private List<Term> terms;
 
-    public ArrayList getTimetable(){
+    public ArrayList getTable(){
     throw new UnsupportedOperationException("Not implemented yet");
     }
 }

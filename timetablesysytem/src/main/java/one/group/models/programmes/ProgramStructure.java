@@ -125,7 +125,7 @@ public class ProgramStructure implements GetID, Table{
      * Returns the timetable.
      * @return  timetable the timetable
      */
-    public ArrayList<String> getTimetable(){
+    public ArrayList<String> getTable(){
         return table;
     }
 }

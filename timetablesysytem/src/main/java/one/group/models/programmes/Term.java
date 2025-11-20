@@ -9,7 +9,7 @@ public class Term implements  Table{
     /** The list of days for this term. */
     private ArrayList<String> table;
 
-    public ArrayList getTimetable(){
+    public ArrayList getTable(){
     throw new UnsupportedOperationException("Not implemented yet");    
     }
 }

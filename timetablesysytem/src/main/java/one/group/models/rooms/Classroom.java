@@ -2,8 +2,6 @@ package one.group.models.rooms;
 
 import java.util.ArrayList;
 
-import jdk.jshell.spi.ExecutionControl;
-
 public class Classroom extends Room {
 
     /**Creates Classroom object using String id and int capacity. */
@@ -12,6 +10,6 @@ public class Classroom extends Room {
     }
 
     public ArrayList<String> getTable(){
-        throw new (ExecutionControl.NotImplementedException);
+        throw new UnsupportedOperationException("Not implemented yet");
     }
 }

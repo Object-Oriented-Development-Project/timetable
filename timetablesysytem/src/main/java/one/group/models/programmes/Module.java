@@ -21,7 +21,7 @@ public class Module implements GetID, Table {
     public String getID(){
         return id;
     }
-    public ArrayList getTimetable(){
+    public ArrayList getTable(){
     throw new UnsupportedOperationException("Not implemented yet");
     }
 }
