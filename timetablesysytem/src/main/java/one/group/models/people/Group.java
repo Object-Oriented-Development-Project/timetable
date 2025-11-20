@@ -3,10 +3,10 @@ package one.group.models.people;
 import java.util.ArrayList;
 import java.util.List;
 
-import one.group.models.interfaces.GetTimetable;
+import one.group.models.interfaces.Table;
 
 /** The base abstract class to represent a group of people. */
-public class Group<E extends Person> implements  GetTimetable {
+public class Group<E extends Person> implements Table {
     /** The id of the group. */
     private String groupId;
     /** The name of the group. */
@@ -67,7 +67,7 @@ public class Group<E extends Person> implements  GetTimetable {
         return name + groupId + " ("+ people.size() + " people)";
     }
 
-    public ArrayList getTimetable(){
+    public ArrayList getTable(){
     throw new UnsupportedOperationException("Not implemented yet");
     }
 }

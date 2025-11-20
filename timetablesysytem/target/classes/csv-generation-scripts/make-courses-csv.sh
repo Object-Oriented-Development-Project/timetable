@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # CSV file name
-file="courses-list.csv"
+file="courses.csv"
 
 # Write headers
 echo "Course ID, No. Years, Student Group, Faculty" > "$file"

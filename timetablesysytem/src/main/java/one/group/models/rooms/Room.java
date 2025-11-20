@@ -2,9 +2,9 @@ package one.group.models.rooms;
 import java.util.ArrayList;
 
 import one.group.models.interfaces.GetID;
-import one.group.models.interfaces.GetTimetable;
+import one.group.models.interfaces.Table;
 
-public abstract class Room implements GetID, GetTimetable{
+public abstract class Room implements GetID, Table{
 
     private String roomID;
     private int capacity;

@@ -20,7 +20,7 @@ public class Student extends Person {
         this.yearOfStudy = yearOfStudy;
     }
 
-    public ArrayList getTimetable(){
+    public ArrayList getTable(){
     throw new UnsupportedOperationException("Not implemented yet");
     }
 }

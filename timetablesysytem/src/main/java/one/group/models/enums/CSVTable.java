@@ -7,7 +7,8 @@ public enum CSVTable {
     MODULES_TABLE("modules.csv"),
     ROOMS_TABLE("rooms.csv") ,
     STUDENTS_TABLE("students.csv"),
-    TERMS_TABLE("terms.csv");
+    TERMS_TABLE("terms.csv"),
+    ADMINS_TABLE("admins.csv");
 
     private String filePath;
 

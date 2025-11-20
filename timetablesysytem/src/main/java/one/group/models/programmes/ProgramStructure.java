@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import one.group.models.interfaces.GetID;
-import one.group.models.interfaces.GetTimetable;
+import one.group.models.interfaces.Table;
 import one.group.models.people.Lecturer;
 import one.group.models.people.Student;
 
 /** Class representing a course. */
-public class ProgramStructure implements GetID, GetTimetable{
+public class ProgramStructure implements GetID, Table{
     /** The id of the course. */
     private String CourseID;
     /** The name of the course. */

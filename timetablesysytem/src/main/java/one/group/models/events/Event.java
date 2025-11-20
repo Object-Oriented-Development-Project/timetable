@@ -1,4 +1,4 @@
-package one.group.models.interfaces.events;
+package one.group.models.events;
 import java.time.DayOfWeek;
 import java.time.LocalTime;
 

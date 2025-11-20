@@ -3,12 +3,12 @@ package one.group.models.people;
 import java.util.ArrayList;
 
 import one.group.models.interfaces.GetID;
-import one.group.models.interfaces.GetTimetable;
+import one.group.models.interfaces.Table;
 
 /**
  * The base abstract class for representing a person.
  */
- public abstract class Person implements GetID, GetTimetable{
+ public abstract class Person implements GetID, Table{
     /** The name of the person. */
     private String name;
     /** The id of the person. */
