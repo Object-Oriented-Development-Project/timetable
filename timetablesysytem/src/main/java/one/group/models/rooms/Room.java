@@ -1,18 +1,24 @@
 package one.group.models.rooms;
 import java.util.ArrayList;
 
-public abstract class Room {
+import one.group.models.interfaces.GetID;
 
-    private String id;
+public abstract class Room implements GetID{
+
+    private String roomID;
     private int capacity;
     private ArrayList<String> table;
 
     public Room(String id, int capacity){
-        this.id = id;
+        this.roomID = id;
         this.capacity = capacity;
     }
 
     public int getCapacity() {
         return capacity;
+    }
+
+    public String getID(){
+        return roomID;
     }
 }

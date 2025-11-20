@@ -3,13 +3,14 @@ package one.group.models.programmes;
 import java.util.ArrayList;
 import java.util.List;
 
+import one.group.models.interfaces.GetID;
 import one.group.models.people.Lecturer;
 import one.group.models.people.Student;
 
 /** Class representing a course. */
-public class ProgramStructure {
+public class ProgramStructure implements GetID{
     /** The id of the course. */
-    private String id;
+    private String CourseID;
     /** The name of the course. */
     private String courseName;
     /** The list of modules for the course. */
@@ -28,7 +29,7 @@ public class ProgramStructure {
     * @return id the course id
     */
     public String getID(){
-        return id;
+        return CourseID;
     }
 
     /**
@@ -36,7 +37,7 @@ public class ProgramStructure {
     * @param newID the new course id
     */
     public void setID(String newID){
-        id = newID;
+        CourseID = newID;
     }
 
     /**

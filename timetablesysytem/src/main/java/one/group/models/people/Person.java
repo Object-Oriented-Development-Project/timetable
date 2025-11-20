@@ -2,10 +2,12 @@ package one.group.models.people;
 
 import java.util.ArrayList;
 
+import one.group.models.interfaces.GetID;
+
 /**
  * The base abstract class for representing a person.
  */
- public abstract class Person{
+ public abstract class Person implements GetID{
     /** The name of the person. */
     private String name;
     /** The id of the person. */
@@ -34,14 +36,6 @@ import java.util.ArrayList;
     }
 
     /**
-     * Returns the ID of the Person.
-     * @return id the persons id
-     */
-    public String getID(){
-        return id;
-    }
-
-    /**
      * Returns whether of not the Perosn is an Admin.
      * @return isAdmin the persons admin status
      */
@@ -55,5 +49,9 @@ import java.util.ArrayList;
      */
     public void setIsAdmin(boolean truthValue){
         isAdmin = truthValue;
+    }
+
+    public String getID(){
+        return id;
     }
 }
