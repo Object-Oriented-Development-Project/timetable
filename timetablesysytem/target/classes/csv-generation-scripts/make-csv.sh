@@ -1,3 +1,5 @@
+
+# Target CSV file
 file="output.csv"
 
 # Write headers

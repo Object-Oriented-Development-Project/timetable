@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# CSV file name
+# Target CSV file
 file="rooms.csv"
 
 # Write headers

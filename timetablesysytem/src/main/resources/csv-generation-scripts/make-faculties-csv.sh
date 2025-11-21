@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# CSV file name
+# Target CSV file
 file="faculties.csv"
 
 # Write headers

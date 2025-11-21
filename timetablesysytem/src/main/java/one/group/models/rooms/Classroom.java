@@ -9,7 +9,7 @@ public class Classroom extends Room {
         super(id, capacity);
     }
 
-    public ArrayList<String> getTable(){
+    public ArrayList<String[]> getTable(){
         throw new UnsupportedOperationException("Not implemented yet");
     }
 }

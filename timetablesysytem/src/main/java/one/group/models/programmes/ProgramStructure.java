@@ -23,7 +23,7 @@ public class ProgramStructure implements GetID, Table{
     /** A list containing all of the year objects for the course. */
     private List<Year> years;
     /** The timetable for the course. */
-   private ArrayList<String> table;
+   private ArrayList<String[]> table;
 
     /**
     * Gets the course ID.
@@ -125,7 +125,7 @@ public class ProgramStructure implements GetID, Table{
      * Returns the timetable.
      * @return  timetable the timetable
      */
-    public ArrayList<String> getTable(){
+    public ArrayList<String[]> getTable(){
         return table;
     }
 }

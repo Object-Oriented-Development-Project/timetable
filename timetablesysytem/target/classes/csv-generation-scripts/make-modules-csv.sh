@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# CSV file name
+# Target CSV file
 file="modules.csv"
 
 # Write headers
