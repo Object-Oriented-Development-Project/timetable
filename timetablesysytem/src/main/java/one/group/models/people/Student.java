@@ -35,6 +35,7 @@ public class Student extends Person {
                 thisStudentsTimetable.add(row);
             }
         }
+
         return thisStudentsTimetable;
     }
 }
