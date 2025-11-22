@@ -18,4 +18,6 @@ public interface Table {
 
     /** Method to print a table. */
     public void printTable(ArrayList<String[]> tableToPrint);
+
+    public ArrayList<String[]> accessTable();
 }

@@ -6,11 +6,13 @@ import one.group.models.people.Admin;
 import one.group.models.people.Lecturer;
 import one.group.models.people.Person;
 import one.group.models.people.Student;
+import one.group.models.programmes.Module;
 import one.group.models.programmes.ProgramStructure;
 import one.group.models.repositories.TablesRepo;
 import one.group.models.rooms.Classroom;
 import one.group.models.rooms.Labroom;
 import one.group.models.rooms.Room;
+
 /** The class for the viewer segment of the programme. */
 public class Menu {
     /** Person the user for this interaction */
@@ -35,13 +37,23 @@ public class Menu {
      */
     public boolean runMenu(){
         
+        user = null;
+        admin = null;
+        room = null;
+        module = null;
+        course = null;
+        adminStatus = false;
+
+        //The first block, this is where the user logs in.
         while(go == true){
 
             System.out.printf("Please enter user type: \nS)tudent\nT)eacher\nA)dmin\nQ)uit\n");
 
             String input = scanner.nextLine();
             if(input.toUpperCase().equals("S")){
-                System.out.printf("Please enter your ID:\n");
+
+                System.out.printf("Please enter your ID: \n");
+
                 input = scanner.nextLine();
                 for(String row[]:TablesRepo.getStudentsTable()){
                     if(row[0].equals(input.toUpperCase())){
@@ -56,7 +68,7 @@ public class Menu {
 
                 input = scanner.nextLine();
                 for(String row[]:TablesRepo.getLecturersTable()){
-                    if(row[0].equals(input)){
+                    if(row[0].equals(input.toUpperCase())){
                         user = new Lecturer(row[1], input , row[2]);
                         System.out.printf("Lecturer log in successful!\n");
                         go = false;
@@ -64,17 +76,19 @@ public class Menu {
                 }
             }else if(input.toUpperCase().equals("A")){
 
-                System.out.printf("Please enter your ID:\n");
+                System.out.printf("Please enter your ID: \n");
 
                 input = scanner.nextLine();
                 for(String row[]:TablesRepo.getAdminTable()){
                     if(row[0].equals(input)){
-                        System.out.printf("Please enter your password:\n");
+
+                        System.out.printf("Please enter your password: \n");
+
                         input = scanner.nextLine();
                         if(input.equals(row[2])){
                         admin = new Admin(input, row[1], row[2]);
                         adminStatus = true;
-                        System.out.printf("Admin log in successful!\n");
+                        System.out.printf("Admin log in successful! \n");
                         go = false;
                         }
                     }
@@ -84,8 +98,11 @@ public class Menu {
             }
         }
 
+        //The second block, this is where the user chooses what timetable they want to see.
         go = true;
         while(go == true){
+
+            //User branch.
             if(user instanceof Student || user instanceof Lecturer){
 
             System.out.printf
@@ -94,35 +111,74 @@ public class Menu {
                 String input = scanner.nextLine();
                 if(input.toUpperCase().equals("U")){
                     user.printTable(user.getTable());
-                }else if (input.toUpperCase().equals("R")){
-                    System.out.printf("Please enter the room number: ");
+                }else if(input.toUpperCase().equals("R")){
+
+                    System.out.printf("Please enter the room number: \n");
+
                     input = scanner.nextLine();
                     input = input.toUpperCase();
                     for(String[] row: TablesRepo.getRoomsTable()){
                         if(row[0].equals(input)){
                             if(row[1].equals("TEACHING")){
                                 room = new Classroom(input, Integer.parseInt(row[2]), row[3]);
-                                
                             }else{
                                 room = new Labroom(input, Integer.parseInt(row[2]), row[3]);
                             } 
                         }
                     }
                     room.printTable(room.getTable());
+                }else if (input.toUpperCase().equals("M")){
 
+                    System.out.printf("Please enter the module ID: \n");
+
+                    input = scanner.nextLine();
+                    input = input.toUpperCase();
+                    for(String[] row: TablesRepo.getModulesTable()){
+                        if(row[0].equals(input)){
+                            module = new Module(row[0], row[1], row[2], row[3], row[4], row[5]);
+                        }
+                    }
+                    module.printTable(module.getTable());
+                }else if (input.toUpperCase().equals("C")){
+                    
+                    System.out.printf("Please enter course ID: \n");
+
+                    input = scanner.nextLine();
+                    input = input.toUpperCase();
+                    for(String[] row: TablesRepo.getCoursesTable()){
+                        if(row[0].equals(input)){
+                            course = new ProgramStructure(row[0], Integer.parseInt(row[1]), Integer.parseInt(row[2]), row[3]);
+                        }
+                    }
+                    course.printTable(course.getTable());
                 }else if(input.toUpperCase().equals("L")){
                     break;
                 }else if(input.toUpperCase().equals("Q")){
                     return false;
                 }
+
+            //Admin branch.
             }else if(admin instanceof Admin){
                 System.out.printf
-                ("Please select option: \nQ)uit\n");
+                ("Please select option: \nS)et term\nL)og out\nQ)uit\n");
+
                 String input = scanner.nextLine();
-                if(input.toUpperCase().equals("Q")){
+                if(input.toUpperCase().equals("S")){
+
+                    System.out.printf("Please enter the current term: \n");
+
+                    input = scanner.nextLine();
+                    if(input.equals("1") || input.equals("2")){
+                        admin.setTerm(Integer.parseInt(input));
+                        System.out.printf("Term successfully set to %s\n", input);
+                    }else{
+                        System.out.printf("Error: Invalid input\n");
+                    }
+                }else if (input.toUpperCase().equals("L")){
+                    break;
+                }else if(input.toUpperCase().equals("Q")){
                     return false;
                 }
-
             }
         }
         return true;

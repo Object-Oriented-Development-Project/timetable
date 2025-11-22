@@ -93,4 +93,8 @@ public class Group<E extends Person> implements Table {
     public void queryTable(){
     throw new UnsupportedOperationException("Not implemented yet");
     }
+    
+    public ArrayList<String[]> accessTable(){
+        throw new UnsupportedOperationException("Not implemented yet");
+    }
 }

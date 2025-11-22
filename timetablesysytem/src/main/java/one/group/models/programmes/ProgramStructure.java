@@ -6,7 +6,8 @@ import java.util.List;
 import one.group.models.interfaces.GetID;
 import one.group.models.interfaces.Table;
 import one.group.models.people.Lecturer;
-import one.group.models.people.Student;
+import one.group.models.repositories.TablesRepo;
+import one.group.models.term.Term;
 
 /** Class representing a course. */
 public class ProgramStructure implements GetID, Table{
@@ -18,12 +19,28 @@ public class ProgramStructure implements GetID, Table{
     private List<Module> modules;
     /** The list of lecturers associated with the course. */
     private List<Lecturer> lecturers;
-    /** The list of students associated with the course. */
-    private List<Student> students;
-    /** A list containing all of the year objects for the course. */
-    private List<Year> years;
-    /** The timetable for the course. */
+    /** The number of students associated with the course. */
+    private int students;
+    /** The number of years for the course. */
+    private int years;
+    /** The faculty which this course is a part of. */
+    private String faculty;
+    /** The timetable for the course. */ 
    private ArrayList<String[]> table;
+
+   /**
+    * Constructor to instansiate a ProgramStructure.
+    * @param CourseID the id of the course
+    * @param years the number of years of the course
+    * @param students the number of students in the course
+    * @param faculty the faculty that the course is a part of
+    */
+   public ProgramStructure(String CourseID, int years, int students, String faculty){
+        this.CourseID = CourseID;
+        this.years = years;
+        this.students = students;
+        this.faculty = faculty;
+   }
 
     /**
     * Gets the course ID.
@@ -94,56 +111,73 @@ public class ProgramStructure implements GetID, Table{
     * Returns a copy of students.
     * @return students a copy of students
     */
-    public List<Student> getStudents(){
-        return List.copyOf(students);
-    }
-
-    /**
-    * Returns the reference to students.
-    * @return students the list of students
-    */
-    public List<Student> getStudentsEdit(){
-        return students;
+    public int getStudents(){
+        int i = students;
+        return i;
     }
 
     /**
     * Returns a copy of years.
     * @return years a copy of years
     */
-    public List<Year> getYears(){
-        return List.copyOf(years);
+    public int getYears(){
+        int i = years;
+        return i;
     }
 
     /**
-    * Returns the reference to years.
-    * @return years
-    */
-    public List<Year> getYearsEdit(){
-        return years;
-    }
-
-    /**
-     * Returns the timetable.
-     * @return  timetable the timetable
+     * Method to access a courses table.
+     * @return
      */
     @Override
-    public ArrayList<String[]> getTable(){
-    throw new UnsupportedOperationException("Not implemented yet");
+    public ArrayList<String[]> accessTable(){
+        return table;
     }
 
+    /**
+     * Method to set a courses table to the given one.
+     */
     @Override
     public void setTable(ArrayList<String[]> newArrayList){
-    throw new UnsupportedOperationException("Not implemented yet");
+        table = newArrayList;
     }
 
-    @Override
-    public void printTable(ArrayList<String[]> tableToPrint){
-    throw new UnsupportedOperationException("Not implemented yet");
-    }
-
+    /** Method queryTable implemented for a course, called by getTable() if current users table is null. Sets users table to result. */
     @Override
     public void queryTable(){
-    throw new UnsupportedOperationException("Not implemented yet");
+        ArrayList<String[]> thisCoursesTimetable = new ArrayList<>();
+        ArrayList<String[]> termsTimetable = TablesRepo.getTermsTable();
+        for(String[] row: termsTimetable){
+            if(row[6].equals(getID())&&Integer.parseInt(row[8]) == Term.getTerm()){
+                thisCoursesTimetable.add(row);
+            }
+        }
+        setTable(thisCoursesTimetable);
+    }
+
+    /** Method to get the courses table. Checks if current table is null, if it is, the method calls queryTable() to make one. 
+    *@return the modules timetable. 
+    */
+    @Override
+    public ArrayList<String[]> getTable(){
+        if(accessTable() == null){
+            queryTable();
+        }
+        return accessTable();
+    }
+
+    /**
+     *  Method to print the courses table.
+     * @param tableToPrint
+     */
+    @Override
+    public void printTable(ArrayList<String[]> tableToPrint){
+    for(String[] row: tableToPrint){
+        for(int i = 0;i < 5;i++){
+            System.out.printf(" %s | ", row[i]);
+            }
+        System.out.printf("\n------\n");
+        }
     }
 
 }
