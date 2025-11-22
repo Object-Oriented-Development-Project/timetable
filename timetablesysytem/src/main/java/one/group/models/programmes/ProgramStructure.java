@@ -29,6 +29,7 @@ public class ProgramStructure implements GetID, Table{
     * Gets the course ID.
     * @return id the course id
     */
+    @Override
     public String getID(){
         return CourseID;
     }
@@ -125,18 +126,22 @@ public class ProgramStructure implements GetID, Table{
      * Returns the timetable.
      * @return  timetable the timetable
      */
+    @Override
     public ArrayList<String[]> getTable(){
     throw new UnsupportedOperationException("Not implemented yet");
     }
 
+    @Override
     public void setTable(ArrayList<String[]> newArrayList){
     throw new UnsupportedOperationException("Not implemented yet");
     }
 
+    @Override
     public void printTable(ArrayList<String[]> tableToPrint){
     throw new UnsupportedOperationException("Not implemented yet");
     }
 
+    @Override
     public void queryTable(){
     throw new UnsupportedOperationException("Not implemented yet");
     }

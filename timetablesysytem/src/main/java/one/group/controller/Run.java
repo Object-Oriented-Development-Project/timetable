@@ -6,7 +6,7 @@ public class Run {
     /**
      * The main method for the controller.
      * @param args the command line arguments.
-     * Uses the boolean value for 'go' sustain a while loop, the Classes single method returns false on user quit.
+     * Uses the boolean value for 'go' to sustain a while loop, go is set to false when the menu returns false.
      */
     public static void main(String[] args){
         Menu menu = new Menu();

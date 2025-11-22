@@ -69,15 +69,18 @@ public class Group<E extends Person> implements Table {
         return name + groupId + " ("+ people.size() + " people)";
     }
 
-    public ArrayList getTable(){
+    @Override
+    public ArrayList<String[]> getTable(){
     throw new UnsupportedOperationException("Not implemented yet");
     }
 
-        public void setTable(ArrayList<String[]> newArrayList){
-        table = newArrayList;
+    @Override
+    public void setTable(ArrayList<String[]> newArrayList){
+    table = newArrayList;
     }
 
-        public void printTable(ArrayList<String[]> tableToPrint){
+    @Override
+    public void printTable(ArrayList<String[]> tableToPrint){
         for(String[] row: tableToPrint){
             for(int i = 0;i < row.length;i++){
                 System.out.printf(" %s | ", row[i]);
@@ -86,6 +89,7 @@ public class Group<E extends Person> implements Table {
         }
     }
 
+    @Override
     public void queryTable(){
     throw new UnsupportedOperationException("Not implemented yet");
     }

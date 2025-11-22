@@ -18,21 +18,26 @@ public class Module implements GetID, Table {
     /**The timetable for the module. */
     private ArrayList<String[]> table;
 
+    @Override
     public String getID(){
         return id;
     }
+    @Override
     public ArrayList<String[]> getTable(){
     throw new UnsupportedOperationException("Not implemented yet");
     }
 
+    @Override
     public void setTable(ArrayList<String[]> newArrayList){
     throw new UnsupportedOperationException("Not implemented yet");
     }
 
+    @Override
     public void printTable(ArrayList<String[]> tableToPrint){
     throw new UnsupportedOperationException("Not implemented yet");
     }
 
+    @Override
     public void queryTable(){
     throw new UnsupportedOperationException("Not implemented yet");
     }

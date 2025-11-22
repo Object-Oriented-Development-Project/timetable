@@ -13,7 +13,7 @@ public class Day {
     private List<Event> events;
     /** The day of the week */
     private String day;
-    private ArrayList<String> table;
+    private ArrayList<String[]> table;
     
     /**
      * Returns the day of the week.

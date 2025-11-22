@@ -8,6 +8,7 @@ import one.group.models.term.Term;
 /** Abstract class to represent a room. */
 public abstract class Room implements GetID, Table{
     /** String for the rooms id. */
+    @SuppressWarnings("FieldMayBeFinal")
     private String roomID;
     /** String for the rooms capacity. */
     private int capacity;
@@ -41,6 +42,7 @@ public abstract class Room implements GetID, Table{
      * Method to return the id of the room.
      * @return roomID the rooms ID
      */
+    @Override
     public String getID(){
         return roomID;
     }
@@ -64,11 +66,13 @@ public abstract class Room implements GetID, Table{
     /**
      * Method to set the table of the room to the given one.
      */
+    @Override
     public void setTable(ArrayList<String[]> newArrayList){
         table = newArrayList;
     }
 
     /** Method queryTable implemented for a room, called by getTable() if current rooms table is null. Sets rooms table to result. */
+    @Override
     public void queryTable(){
         ArrayList<String[]> thisRoomsTimetable = new ArrayList<>();
         ArrayList<String[]> termsTimetable = TablesRepo.getTermsTable();
@@ -83,6 +87,7 @@ public abstract class Room implements GetID, Table{
     /** Method to get the rooms table. Checks if current table is null, if it is, the method calls queryTable() to make one. 
     *@return the rooms timetable. 
     */
+    @Override
     public ArrayList<String[]> getTable(){
         if(accessTable() == null){
             queryTable();
@@ -94,6 +99,7 @@ public abstract class Room implements GetID, Table{
      *  Method to print the rooms table.
      * @param tableToPrint
      */
+    @Override
     public void printTable(ArrayList<String[]> tableToPrint){
     for(String[] row: tableToPrint){
         for(int i = 0;i < 5;i++){

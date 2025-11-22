@@ -53,6 +53,7 @@ import one.group.models.interfaces.Table;
     }
 
     /** Method to return the users ID. */
+    @Override
     public String getID(){
         return id;
     }
@@ -68,6 +69,7 @@ import one.group.models.interfaces.Table;
     /**
      * Method to set a users table to the given one.
      */
+    @Override
     public void setTable(ArrayList<String[]> newArrayList){
         table = newArrayList;
     }

@@ -12,7 +12,8 @@ public class StudentGroup extends Group {
 
     private ArrayList<String[]> table;
 
-    public ArrayList getTable(){
+    @Override
+    public ArrayList<String[]> getTable(){
     throw new UnsupportedOperationException("Not implemented yet");
     }
 }
