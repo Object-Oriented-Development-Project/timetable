@@ -16,7 +16,7 @@ import one.group.models.interfaces.Table;
     /** The persons admin status. */
     private boolean  isAdmin = false;
     /** The persons timetable */
-    private ArrayList<String> table;
+    private ArrayList<String[]> table;
     
     /**
      * Creates Person object with specified name, id and typeOfPerson.
@@ -55,4 +55,13 @@ import one.group.models.interfaces.Table;
     public String getID(){
         return id;
     }
+
+    public ArrayList<String[]> accessTable(){
+        return table;
+    }
+
+    public void setTable(ArrayList<String[]> newArrayList){
+        table = newArrayList;
+    }
+
 }

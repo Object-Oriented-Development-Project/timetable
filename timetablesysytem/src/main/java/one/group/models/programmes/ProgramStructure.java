@@ -126,6 +126,14 @@ public class ProgramStructure implements GetID, Table{
      * @return  timetable the timetable
      */
     public ArrayList<String[]> getTable(){
-        return table;
+    throw new UnsupportedOperationException("Not implemented yet");
+    }
+
+    public void setTable(ArrayList<String[]> newArrayList){
+    throw new UnsupportedOperationException("Not implemented yet");
+    }
+
+    public void printTable(ArrayList<String[]> tableToPrint){
+    throw new UnsupportedOperationException("Not implemented yet");
     }
 }

@@ -14,6 +14,8 @@ public class Group<E extends Person> implements Table {
     /** A list of people, can take a person of any type. */
     private List<E> people;
 
+    private ArrayList<String[]> table;
+
     /** 
      * A constructor to create a group, takes the groupId, name and a list of people.
      * @param groupId the group's id
@@ -69,5 +71,18 @@ public class Group<E extends Person> implements Table {
 
     public ArrayList getTable(){
     throw new UnsupportedOperationException("Not implemented yet");
+    }
+
+        public void setTable(ArrayList<String[]> newArrayList){
+        table = newArrayList;
+    }
+
+        public void printTable(ArrayList<String[]> tableToPrint){
+        for(String[] row: tableToPrint){
+            for(int i = 0;i < row.length;i++){
+                System.out.printf(" %s | ", row[i]);
+            }
+            System.out.printf("\n------\n");
+        }
     }
 }

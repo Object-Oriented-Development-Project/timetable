@@ -23,7 +23,15 @@ public abstract class Room implements GetID, Table{
         return roomID;
     }
 
-    public ArrayList getTimetable(){
-        throw new UnsupportedOperationException("Not implemented yet");
+    public ArrayList<String[]> getTable(){
+    throw new UnsupportedOperationException("Not implemented yet");
+    }
+
+    public void setTable(ArrayList<String[]> newArrayList){
+    throw new UnsupportedOperationException("Not implemented yet");
+    }
+
+    public void printTable(ArrayList<String[]> tableToPrint){
+    throw new UnsupportedOperationException("Not implemented yet");
     }
 }

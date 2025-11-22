@@ -1,4 +1,7 @@
 package one.group.models.people;
+
+import one.group.models.term.Term;
+
 /** A Class for admin users*/
 public class Admin{
     private String id;
@@ -13,5 +16,9 @@ public class Admin{
         this.id = id;
         this.name = name;
         this.password = password;
+    }
+
+    public void setTerm(int n){
+        Term.setTerm(n);
     }
 }

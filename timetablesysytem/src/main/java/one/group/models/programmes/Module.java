@@ -16,12 +16,20 @@ public class Module implements GetID, Table {
     /** The group of students associated with the module. */
     private StudentGroup studentGroup;
     /**The timetable for the module. */
-    private ArrayList<String> table;
+    private ArrayList<String[]> table;
 
     public String getID(){
         return id;
     }
-    public ArrayList getTable(){
+    public ArrayList<String[]> getTable(){
+    throw new UnsupportedOperationException("Not implemented yet");
+    }
+
+    public void setTable(ArrayList<String[]> newArrayList){
+    throw new UnsupportedOperationException("Not implemented yet");
+    }
+
+    public void printTable(ArrayList<String[]> tableToPrint){
     throw new UnsupportedOperationException("Not implemented yet");
     }
 }

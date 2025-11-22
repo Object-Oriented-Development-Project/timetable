@@ -3,6 +3,7 @@ package one.group.models.people;
 import java.util.ArrayList;
 
 import one.group.models.repositories.TablesRepo;
+import one.group.models.term.Term;
 
 /** The class to represent a student. */
 public class Student extends Person {
@@ -25,17 +26,35 @@ public class Student extends Person {
         this.yearOfStudy = yearOfStudy;
     }
 
-    public ArrayList<String[]> getTable(){
+    public ArrayList<String[]> queryTable(){
         ArrayList<String[]> thisStudentsTimetable = new ArrayList<>();
         ArrayList<String[]> termsTimetable = TablesRepo.getTermsTable();
-        String[] thisEntry;
-        for(String[] row: thisStudentsTimetable){
-            if(row[6] == courseID){
-                thisEntry = row;
+        for(String[] row: termsTimetable){
+            if(row[6].equals(courseID)&&Integer.parseInt(row[7]) == getYearOfStudy()&&Integer.parseInt(row[8]) == Term.getTerm()){
                 thisStudentsTimetable.add(row);
             }
         }
-
+        setTable(thisStudentsTimetable);
         return thisStudentsTimetable;
+    }
+
+    public ArrayList<String[]> getTable(){
+        if(accessTable() == null){
+            queryTable();
+        }
+        return accessTable();
+    }
+
+    public int getYearOfStudy(){
+        return yearOfStudy;
+    }
+
+    public void printTable(ArrayList<String[]> tableToPrint){
+    for(String[] row: tableToPrint){
+        for(int i = 0;i < 5;i++){
+            System.out.printf(" %s | ", row[i]);
+            }
+        System.out.printf("\n------\n");
+        }
     }
 }

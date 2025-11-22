@@ -4,10 +4,10 @@
 file="terms.csv"
 
 # Write headers
-echo "Day, Time, Module Code, Class Type, Room, Lecturer, Course, Year, Semester" > "$file"
+echo "Day, Time, Module Code, Class Type, Room, Lecturer, Course, Year, Term" > "$file"
 
 # Example data as arrays
-day=("MONDAY" "MONDAY" "MONDAY" "MONDAY" "MONDAY" "MONDAY" "MONDAY" "MONDAY" "MONDAY" "MONDAY" "MONDAY" "MONDAY" "TUESDAY" "TUESDAY" "TUESDAY" "TUESDAY" "TUESDAY" "TUESDAY" "TUESDAY" "TUESDAY" "TUESDAY" "TUESDAY" "TUESDAY" "TUESDAY" "WEDNESDAY" "WEDNESDAY" "WEDNESDAY" "WEDNESDAY" "WEDNESDAY" "WEDNESDAY" "WEDNESDAY" "WEDNESDAY" "WEDNESDAY" "WEDNESDAY" "WEDNESDAY" "WEDNESDAY" "THURSDAY" "THURSDAY" "THURSDAY" "THURSDAY" "THURSDAY" "THURSDAY" "THURSDAY" "THURSDAY" "THURSDAY" "THURSDAY" "THURSDAY" "THURSDAY" "FRIDAY" "FRIDAY" "FRIDAY" "FRIDAY" "FRIDAY" "FRIDAY" "FRIDAY" "FRIDAY" "FRIDAY" "FRIDAY" "FRIDAY" "FRIDAY")
+day=("MON" "MON" "MON" "MON" "MON" "MON" "MON" "MON" "MON" "MON" "MON" "MON" "TUE" "TUE" "TUE" "TUE" "TUE" "TUE" "TUE" "TUE" "TUE" "TUE" "TUE" "TUE" "WED" "WED" "WED" "WED" "WED" "WED" "WED" "WED" "WED" "WED" "WED" "WED" "THU" "THU" "THU" "THU" "THU" "THU" "THU" "THU" "THU" "THU" "THU" "THU" "FRI" "FRI" "FRI" "FRI" "FRI" "FRI" "FRI" "FRI" "FRI" "FRI" "FRI" "FRI")
 
 time=("09:00-10:00" "10:00-12:00" "10:00-12:00" "12:00-13:00" "13:00-15:00" "13:00-15:00" "15:00-16:00" "15:00-17:00" "15:00-17:00" "16:00-17:00" "16:00-18:00" "16:00-18:00" "09:00-11:00" "09:00-11:00" "09:00-11:00" "11:00-12:00" "11:00-13:00" "13:00-14:00" "13:00-15:00" "14:00-15:00" "15:00-17:00" "15:00-17:00" "16:00-18:00" "16:00-18:00" "09:00-10:00" "09:00-11:00" "10:00-11:00" "11:00-13:00" "11:00-13:00" "13:00-14:00" "13:00-15:00" "14:00-15:00" "15:00-17:00" "15:00-17:00" "16:00-18:00" "16:00-18:00" "09:00-11:00" "09:00-11:00" "09:00-11:00" "11:00-12:00" "11:00-13:00" "12:00-13:00" "13:00-15:00" "13:00-15:00" "15:00-16:00" "15:00-17:00" "16:00-17:00" "16:00-18:00" "09:00-10:00" "09:00-11:00" "10:00-11:00" "11:00-13:00" "11:00-13:00" "13:00-14:00" "13:00-15:00" "14:00-15:00" "15:00-17:00" "15:00-17:00" "16:00-17:00" "16:00-18:00")
 
@@ -23,9 +23,9 @@ course=("LM121" "LM121" "LM121" "LM121" "LM121" "LM121" "LM121" "LM121" "LM121" 
 
 year=(1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1)
 
-semester=(1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 1 1)
+term=(1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 1 1)
 
 # Loop through data and append to CSV
 for i in "${!day[@]}"; do
-    echo "${day[i]},${time[i]},${moduleCode[i]},${classType[i]},${room[i]},${lecturer[i]},${course[i]},${year[i]},${semester[i]}" >> "$file"
+    echo "${day[i]},${time[i]},${moduleCode[i]},${classType[i]},${room[i]},${lecturer[i]},${course[i]},${year[i]},${term[i]}" >> "$file"
 done
