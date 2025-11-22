@@ -13,16 +13,26 @@ import one.group.models.rooms.Labroom;
 import one.group.models.rooms.Room;
 /** The class for the viewer segment of the programme. */
 public class Menu {
-
+    /** Person the user for this interaction */
     private Person user;
+    /** Admin the admin for this interaction */
     private Admin admin;
+    /** Room the room for this interaction */
     private Room room;
+    /** Module the module for this interaction */
     private Module module;
+    /** ProgramStructure the course for this interaction */
     private ProgramStructure course;
+    /** Booean the admin status for this interaction */
     private boolean adminStatus = false;
+    /** Boolean the continue condition for this interaction */
     private boolean go = true;
+    /** Scanner the scanner for this interaction */
     private Scanner scanner = new Scanner(System.in);
 
+    /** Method containing the menus logic, if logout is selected the menu restarts, if quit is selected, the method returns false to signal to the controller to end the menu instance.
+     * @return boolean whether or not to continue
+     */
     public boolean runMenu(){
         
         while(go == true){

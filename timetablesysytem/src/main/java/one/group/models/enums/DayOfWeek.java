@@ -1,8 +1,7 @@
 package one.group.models.enums;
 
 /**
- * Simple enum for representing the days of the week across classes,
- * includes a field for whether or not it is a weekend.
+ * Enum representing the days of the week across classes,
  */
 public enum DayOfWeek {
 

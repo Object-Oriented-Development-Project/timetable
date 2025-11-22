@@ -4,7 +4,9 @@ import java.util.ArrayList;
 
 import one.group.models.enums.CSVTable;
 import one.group.models.user_timetable.CSVReader;
-
+/** Class to act as a repositoty for the information regarding the csv files used by the program. Uses static fields and methods. 
+ * Includes methods to store each csv file as an ArrayList on boot, get methods only return copies.
+ */
 public class TablesRepo {
 
     private static ArrayList<String[]> adminTable;

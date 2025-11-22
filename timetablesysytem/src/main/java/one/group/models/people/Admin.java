@@ -18,6 +18,10 @@ public class Admin{
         this.password = password;
     }
 
+    /**
+     * Method to set the term for the system and by extension what timetable is shown. 
+     * @param n int that should be either 1 or 2.
+     */
     public void setTerm(int n){
         Term.setTerm(n);
     }

@@ -52,14 +52,22 @@ import one.group.models.interfaces.Table;
         isAdmin = truthValue;
     }
 
+    /** Method to return the users ID. */
     public String getID(){
         return id;
     }
 
+    /**
+     * Method to access a users table.
+     * @return
+     */
     public ArrayList<String[]> accessTable(){
         return table;
     }
 
+    /**
+     * Method to set a users table to the given one.
+     */
     public void setTable(ArrayList<String[]> newArrayList){
         table = newArrayList;
     }

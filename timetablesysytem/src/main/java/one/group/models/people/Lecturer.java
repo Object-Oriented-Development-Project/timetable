@@ -18,6 +18,14 @@ public class Lecturer extends Person {
         this.faculty = faculty;
     }
 
+    /** Method to return the lecturers faculty.
+     * @return the faculty the lectur belongs to.
+     */
+    public String getFaculty(){
+        return faculty;
+    }
+
+    /** Method queryTable implemented for a lecturer, called by getTable() if current users table is null. Sets users table to result. */
     @Override
     public void queryTable(){
         ArrayList<String[]> thisLecturersTimetable = new ArrayList<>();
@@ -30,6 +38,9 @@ public class Lecturer extends Person {
         setTable(thisLecturersTimetable);
     }
 
+    /** Method to get the users table. Checks if current table is null, if it is, the method callse queryTable() to make one. 
+    *@return the lecturers timetable. 
+    */
     @Override
     public ArrayList<String[]> getTable(){
         if(accessTable() == null){
@@ -38,10 +49,10 @@ public class Lecturer extends Person {
         return accessTable();
     }
 
-    public String getFaculty(){
-        return faculty;
-    }
-
+    /**
+     *  Method to print the lecturers table.
+     * @param tableToPrint
+     */
     @Override
     public void printTable(ArrayList<String[]> tableToPrint){
     for(String[] row: tableToPrint){
