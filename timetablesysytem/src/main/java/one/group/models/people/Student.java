@@ -26,7 +26,7 @@ public class Student extends Person {
         this.yearOfStudy = yearOfStudy;
     }
 
-    public ArrayList<String[]> queryTable(){
+    public void queryTable(){
         ArrayList<String[]> thisStudentsTimetable = new ArrayList<>();
         ArrayList<String[]> termsTimetable = TablesRepo.getTermsTable();
         for(String[] row: termsTimetable){
@@ -35,7 +35,6 @@ public class Student extends Person {
             }
         }
         setTable(thisStudentsTimetable);
-        return thisStudentsTimetable;
     }
 
     public ArrayList<String[]> getTable(){

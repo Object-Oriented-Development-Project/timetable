@@ -136,4 +136,9 @@ public class ProgramStructure implements GetID, Table{
     public void printTable(ArrayList<String[]> tableToPrint){
     throw new UnsupportedOperationException("Not implemented yet");
     }
+
+    public void queryTable(){
+    throw new UnsupportedOperationException("Not implemented yet");
+    }
+
 }

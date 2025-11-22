@@ -85,4 +85,8 @@ public class Group<E extends Person> implements Table {
             System.out.printf("\n------\n");
         }
     }
+
+    public void queryTable(){
+    throw new UnsupportedOperationException("Not implemented yet");
+    }
 }

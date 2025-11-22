@@ -12,4 +12,8 @@ public class Classroom extends Room {
     public ArrayList<String[]> getTable(){
         throw new UnsupportedOperationException("Not implemented yet");
     }
+
+    public void queryTable(){
+    throw new UnsupportedOperationException("Not implemented yet");
+    }
 }

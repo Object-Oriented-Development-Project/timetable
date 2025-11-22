@@ -70,7 +70,8 @@ public class Menu {
         while(go == true){
             if(user instanceof Student || user instanceof Lecturer){
 
-            System.out.printf("Please select option: \nU)ser Timetable\nA)Room Timetable\nM)odule Timetable\nQ)uit\n");
+            System.out.printf
+            ("Please select option: \nU)ser timetable\nA)Room timetable\nM)odule timetable\nC)ourse timetable\nQ)uit\n");
 
                 String input = scanner.nextLine();
                 if(input.toUpperCase().equals("U")){
