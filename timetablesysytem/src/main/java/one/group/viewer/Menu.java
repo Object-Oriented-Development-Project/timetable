@@ -79,7 +79,7 @@ public class Menu {
             if(user instanceof Student || user instanceof Lecturer){
 
             System.out.printf
-            ("Please select option: \nU)ser timetable\nA)Room timetable\nM)odule timetable\nC)ourse timetable\nL)ogout\nQ)uit\n");
+            ("Please select option: \nU)ser timetable\nR)oom timetable\nM)odule timetable\nC)ourse timetable\nL)ogout\nQ)uit\n");
 
                 String input = scanner.nextLine();
                 if(input.toUpperCase().equals("U")){
@@ -89,20 +89,30 @@ public class Menu {
                     input = scanner.nextLine();
                     input = input.toUpperCase();
                     for(String[] row: TablesRepo.getRoomsTable()){
-                        if(row[0].equals(room.getID())){
+                        if(row[0].equals(input)){
                             if(row[1].equals("TEACHING")){
                                 room = new Classroom(input, Integer.parseInt(row[2]), row[3]);
+                                
                             }else{
                                 room = new Labroom(input, Integer.parseInt(row[2]), row[3]);
-                            }
+                            } 
                         }
                     }
                     room.printTable(room.getTable());
+
                 }else if(input.toUpperCase().equals("L")){
                     break;
                 }else if(input.toUpperCase().equals("Q")){
                     return false;
                 }
+            }else if(admin instanceof Admin){
+                System.out.printf
+                ("Please select option: \nQ)uit\n");
+                String input = scanner.nextLine();
+                if(input.toUpperCase().equals("Q")){
+                    return false;
+                }
+
             }
         }
         return true;

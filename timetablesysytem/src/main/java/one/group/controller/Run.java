@@ -5,9 +5,13 @@ import one.group.viewer.Menu;
 public class Run {
 
     public static void main(String[] args){
+        
         Menu menu = new Menu();
-        while(menu.runMenu()){
-            
+
+        boolean go = true;
+
+        while(go){
+            go = menu.runMenu();
         }
     }
 }
