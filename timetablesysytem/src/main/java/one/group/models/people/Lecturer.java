@@ -18,6 +18,7 @@ public class Lecturer extends Person {
         this.faculty = faculty;
     }
 
+    @Override
     public void queryTable(){
         ArrayList<String[]> thisLecturersTimetable = new ArrayList<>();
         ArrayList<String[]> termsTimetable = TablesRepo.getTermsTable();
@@ -29,6 +30,7 @@ public class Lecturer extends Person {
         setTable(thisLecturersTimetable);
     }
 
+    @Override
     public ArrayList<String[]> getTable(){
         if(accessTable() == null){
             queryTable();
@@ -40,6 +42,7 @@ public class Lecturer extends Person {
         return faculty;
     }
 
+    @Override
     public void printTable(ArrayList<String[]> tableToPrint){
     for(String[] row: tableToPrint){
         for(int i = 0;i < 5;i++){

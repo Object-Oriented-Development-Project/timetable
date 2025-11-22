@@ -8,11 +8,14 @@ public abstract class Room implements GetID, Table{
 
     private String roomID;
     private int capacity;
+    private String building;
     private ArrayList<String> table;
 
-    public Room(String id, int capacity){
+    public Room(String id, int capacity, String buidling){
         this.roomID = id;
         this.capacity = capacity;
+        this.building = buidling;
+
     }
 
     public int getCapacity() {

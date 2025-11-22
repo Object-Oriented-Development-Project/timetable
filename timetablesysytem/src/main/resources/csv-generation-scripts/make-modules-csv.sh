@@ -14,6 +14,6 @@ lectureHours=(2 2 2 2 2 2 2 2 2 2 2 2 2 2)
 labHours=(2 1 2 1 0 2 2 2 1 0 2 2 1 2)
 tutorialHours=(1 2 0 1 2 1 1 0 1 2 1 1 1 1)
 # Loop through data and append to CSV
-for i in "${!id@]}"; do
+for i in "${!id[@]}"; do
     echo "${id[i]},${lecturer[i]},${studentGroup[i]},${lectureHours[i]},${labHours[i]},${tutorialHours[i]}," >> "$file"
 done

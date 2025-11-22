@@ -6,21 +6,28 @@ import one.group.models.people.Admin;
 import one.group.models.people.Lecturer;
 import one.group.models.people.Person;
 import one.group.models.people.Student;
+import one.group.models.programmes.ProgramStructure;
 import one.group.models.repositories.TablesRepo;
+import one.group.models.rooms.Classroom;
+import one.group.models.rooms.Labroom;
+import one.group.models.rooms.Room;
 /** The class for the viewer segment of the programme. */
 public class Menu {
 
     private Person user;
     private Admin admin;
+    private Room room;
+    private Module module;
+    private ProgramStructure course;
     private boolean adminStatus = false;
     private boolean go = true;
     private Scanner scanner = new Scanner(System.in);
 
-    public void runMenu(){
+    public boolean runMenu(){
         
         while(go == true){
 
-            System.out.printf("Please enter user type: \nS)tudent\nL)ecturer\nA)dmin\nQ)uit\n");
+            System.out.printf("Please enter user type: \nS)tudent\nT)eacher\nA)dmin\nQ)uit\n");
 
             String input = scanner.nextLine();
             if(input.toUpperCase().equals("S")){
@@ -33,14 +40,14 @@ public class Menu {
                         go = false;
                     }
                 }
-            }else if(input.toUpperCase().equals("L")){
+            }else if(input.toUpperCase().equals("T")){
 
                 System.out.printf("Please enter your ID:\n");
 
                 input = scanner.nextLine();
                 for(String row[]:TablesRepo.getLecturersTable()){
                     if(row[0].equals(input)){
-                        user = new Lecturer(input, row[1], row[2]);
+                        user = new Lecturer(row[1], input , row[2]);
                         System.out.printf("Lecturer log in successful!\n");
                         go = false;
                     }
@@ -63,23 +70,41 @@ public class Menu {
                     }
                 }            
             }else if(input.toUpperCase().equals("Q")){
-                go = false;
+                return false;
             }
         }
+
         go = true;
         while(go == true){
             if(user instanceof Student || user instanceof Lecturer){
 
             System.out.printf
-            ("Please select option: \nU)ser timetable\nA)Room timetable\nM)odule timetable\nC)ourse timetable\nQ)uit\n");
+            ("Please select option: \nU)ser timetable\nA)Room timetable\nM)odule timetable\nC)ourse timetable\nL)ogout\nQ)uit\n");
 
                 String input = scanner.nextLine();
                 if(input.toUpperCase().equals("U")){
                     user.printTable(user.getTable());
+                }else if (input.toUpperCase().equals("R")){
+                    System.out.printf("Please enter the room number: ");
+                    input = scanner.nextLine();
+                    input = input.toUpperCase();
+                    for(String[] row: TablesRepo.getRoomsTable()){
+                        if(row[0].equals(room.getID())){
+                            if(row[1].equals("TEACHING")){
+                                room = new Classroom(input, Integer.parseInt(row[2]), row[3]);
+                            }else{
+                                room = new Labroom(input, Integer.parseInt(row[2]), row[3]);
+                            }
+                        }
+                    }
+                    room.printTable(room.getTable());
+                }else if(input.toUpperCase().equals("L")){
+                    break;
                 }else if(input.toUpperCase().equals("Q")){
-                    go = false;
+                    return false;
                 }
             }
         }
+        return true;
     }
 }

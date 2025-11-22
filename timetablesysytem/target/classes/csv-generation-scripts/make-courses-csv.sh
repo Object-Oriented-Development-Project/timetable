@@ -13,6 +13,6 @@ students=(120 110 95 105 45)
 faculty=("CSIS" "CSIS" "CSIS" "CSIS" "CSIS")
 
 # Loop through data and append to CSV
-for i in "${!id@]}"; do
+for i in "${!id[@]}"; do
     echo "${id[i]},${numberOfYears[i]},${students[i]},${faculty[i]}" >> "$file"
 done
