@@ -2,10 +2,10 @@
 
 The timetable application currently functions essentially fully for the viewing of timetables for all relevant entities. It does not yet have any functionality for adding or removing entries.
 It adopts the Model Controller View structure.
-The program has a login system that detirmines the menu the user will be presented with after this stage.
+The program has a login system that determines the menu the user will be presented with after this stage.
 Users and Lecturers have the same options but with different methods being used for getting the User timetable.
 All entities that can have a timetable exist as a class and can be instantiated, they have fields corresponding to the entries in the CSV files, this allows for easy comparisons.
-The entries for the 'terms' csv file are in chronological order for using the days, the decision is that it will be easier to manage the adding of entries so that they are placed with an entry with the same day precedding it
+The entries for the 'terms' csv file are in chronological order for using the days, the decision is that it will be easier to manage the adding of entries so that they are placed with an entry with the same day preceding it
 than it is to sort String[]'s in an array list every time the timetable is called to be printed.
 Interfaces Table and getID allow for the common methods required to generate a timetable from a csv file of data to be present in and overrided for unrelated classes.
 Enums DayOfWeek and CVSTable allow global access to information about their respective concerns using static fields and methods to prevent mismatched objects existing in the program.
