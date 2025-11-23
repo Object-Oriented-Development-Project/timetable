@@ -1,2 +1,4 @@
-ID , e-mail , Password
-0001,admin@ul.ie,adminULdotIE
+ID,E-MAIL,PASSWORD
+0001,ADMIN@UL.IE,adminULdotIE
+0002,REGISTRAR@UL.IE,password
+0003,TIMETABLE@UL.IE,123

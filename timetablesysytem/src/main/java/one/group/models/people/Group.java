@@ -94,6 +94,7 @@ public class Group<E extends Person> implements Table {
     throw new UnsupportedOperationException("Not implemented yet");
     }
     
+    @Override
     public ArrayList<String[]> accessTable(){
         throw new UnsupportedOperationException("Not implemented yet");
     }
