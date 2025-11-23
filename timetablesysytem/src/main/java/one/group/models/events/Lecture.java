@@ -1,38 +1,8 @@
 package one.group.models.events;
 
-import java.time.DayOfWeek;
-import java.time.LocalTime;
-
-import one.group.models.people.Group;
-import one.group.models.people.Lecturer;
-import one.group.models.programmes.Module;
-import one.group.models.rooms.Classroom;
-import one.group.models.rooms.Room;
-
 public class Lecture extends Event {
-    /**
-     * Constructor for the lecture class
-     * @throws IllegalArgumentException if lecture not scheduled in a classroom
-     * @throws IllegalArgumentException if the group size exceeds the room capacity
-     * @param module
-     * @param lecturer
-     * @param room
-     * @param group
-     * @param day
-     * @param startTime
-     * @param endTime
-     */
-    public Lecture(Module module, Lecturer lecturer, Room room, Group group, DayOfWeek day, LocalTime startTime, LocalTime endTime){
 
-        super("Event",module, lecturer, room, group, "Lecture", day, startTime, endTime);
-
-        if(!(room instanceof Classroom)) {
-            throw new IllegalArgumentException("Lecture must be scheduled in a classroom");
-
-        }
-
-        if(group.size() > room.getCapacity()){
-            throw new IllegalArgumentException("Group size exceeds room capcity for this lecture.");
-        }
+    public Lecture(String module, String startTime, String endTime, String lecturer, String room, String day){
+        super(module, startTime, endTime, lecturer, room, day);
     }
 }

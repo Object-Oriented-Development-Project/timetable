@@ -1,71 +1,28 @@
 package one.group.models.events;
-import java.time.DayOfWeek;
-import java.time.LocalTime;
-
-import one.group.models.people.Group;
-import one.group.models.people.Lecturer;
-import one.group.models.programmes.Module;
-import one.group.models.rooms.Room;
 
 public abstract class Event {
     
-    private Module module;
-    private String typeOfEvent;
-    private LocalTime startTime;
-    private LocalTime endTime;
-    private Lecturer lecturer;
-    private Room room;
-    private Group group;
-    private DayOfWeek day;
+    private String module;
+    private String startTime;
+    private String endTime;
+    private String lecturer;
+    private String room;
+    private String day;
 
-    /**
-     * Constructor for Event
-     * @param type
-     * @param module
-     * @param lecturer
-     * @param room
-     * @param group
-     * @param typeOfEvent
-     * @param day
-     * @param startTime
-     * @param endTime
-     */
-    public Event(String type, Module module, Lecturer lecturer,
-                 Room room, Group group, String typeOfEvent,
-                 DayOfWeek day, LocalTime startTime,
-                 LocalTime endTime){
-
-        this.module=module;
+    public Event(String module, String startTime, String endTime, String lecturer, String room, String day){
+        this.module = module;
+        this.startTime = startTime;
+        this.endTime = endTime;
         this.lecturer = lecturer;
         this.room = room;
         this.day = day;
-        this.group = group;
-        this.typeOfEvent = typeOfEvent;
-        this.startTime = startTime;
-        this.endTime = endTime;
-    }
-
-    /**
-     * Returns the type of the event
-     * @return typeOfEvent
-     */
-    public String getTypeOfEvent() {
-        return typeOfEvent;
-    }
-
-    /**
-     * Returns the specified student group
-     * @return group
-     */
-    public Group getGroup() {
-        return group;
     }
 
     /**
      * Returns the module for the event
      * @return module
      */
-    public Module getModule(){
+    public String getModule(){
         return module;
     }
 
@@ -73,7 +30,7 @@ public abstract class Event {
      * Returns the lecturer for the event
      * @return lecturer
      */
-    public Lecturer getLecturer(){
+    public String getLecturer(){
         return lecturer;
     }
 
@@ -81,7 +38,7 @@ public abstract class Event {
      * Returns the room for the event
      * @return room
      */
-    public Room getRoom() {
+    public String getRoom() {
         return room;
     }
 
@@ -89,7 +46,7 @@ public abstract class Event {
      * Returns the day of the week the event is on
      * @return day
      */
-    public DayOfWeek getDay(){
+    public String getDay(){
         return day;
     }
 
@@ -97,7 +54,7 @@ public abstract class Event {
      * Returns start time of event
      * @return startTime
      */
-    public LocalTime getStartTime(){
+    public String getStartTime(){
         return startTime;
     }
 
@@ -105,7 +62,7 @@ public abstract class Event {
      * Returns the end time of the event
      * @return endTime
      */
-    public LocalTime getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 }
