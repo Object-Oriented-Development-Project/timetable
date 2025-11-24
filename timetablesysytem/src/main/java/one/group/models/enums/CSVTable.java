@@ -5,21 +5,38 @@ package one.group.models.enums;
  */
 public enum CSVTable {
     /** Path to the courses CSV file. */
-    COURSES_TABLE("/data/courses.csv"),
+    COURSES_TABLE("data/courses.csv"),
     /** Path to the faculties CSV file. */
-    FACULTIES_TABLE("/data/faculties.csv"),
+    FACULTIES_TABLE("data/faculties.csv"),
     /** Path to the lecturers CSV file. */
-    LECTURERS_TABLE("/data/lecturers.csv"),
+    LECTURERS_TABLE("data/lecturers.csv"),
     /** Path to the modules CSV file. */
-    MODULES_TABLE("/data/modules.csv"),
+    MODULES_TABLE("data/modules.csv"),
     /** Path to the rooms CSV file. */
-    ROOMS_TABLE("/data/rooms.csv") ,
+    ROOMS_TABLE("data/rooms.csv") ,
     /** Path to the students CSV file. */
-    STUDENTS_TABLE("/data/students.csv"),
+    STUDENTS_TABLE("data/students.csv"),
     /** Path to the terms CSV file. */
-    TERMS_TABLE("/data/terms.csv"),
+    TERMS_TABLE("data/terms.csv"),
     /** Path to the admins CSV file. */
-    ADMINS_TABLE("/data/admins.csv");
+    ADMINS_TABLE("data/admins.csv"),
+
+        /** Path to the courses CSV file. */
+    COURSES_TABLE_WRITE("data/courses.csv"),
+    /** Path to the faculties CSV file. */
+    FACULTIES_TABLE_WRITE("data/faculties.csv"),
+    /** Path to the lecturers CSV file. */
+    LECTURERS_TABLE_WRITE("data/lecturers.csv"),
+    /** Path to the modules CSV file. */
+    MODULES_TABLE_WRITE("data/modules.csv"),
+    /** Path to the rooms CSV file. */
+    ROOMS_TABLE_WRITE("data/rooms.csv") ,
+    /** Path to the students CSV file. */
+    STUDENTS_TABLE_WRITE("data/students.csv"),
+    /** Path to the terms CSV file. */
+    TERMS_TABLE_WRITE("data/terms.csv"),
+    /** Path to the admins CSV file. */
+    ADMINS_TABLE_WRITE("data/admins.csv");
 
     /** The filepath associated with an entry. */
     public String filePath;

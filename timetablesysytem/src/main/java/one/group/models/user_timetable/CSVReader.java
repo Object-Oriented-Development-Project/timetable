@@ -1,6 +1,8 @@
 package one.group.models.user_timetable;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -25,20 +27,22 @@ public class CSVReader {
      * @return allData a list of strings representing each line in the CSV
      * @throws FileNotFoundException if the specified file does not exist
      */
-    public static ArrayList<String[]> readToArrayList(String resourcePath) throws Exception {
-        ArrayList<String[]> allData = new ArrayList<>();
-        try (InputStream data = CSVReader.class.getResourceAsStream(resourcePath);
-             BufferedReader reader = new BufferedReader(new InputStreamReader(data))){
-
-            if (data == null){
-                throw new Exception("Resource not found: " + resourcePath);
-            }
-            String line;
-            while ((line = reader.readLine()) != null){
-                String[] thisRow = line.split(",");
-                allData.add(thisRow);
-            }
+    public static ArrayList<String[]> readToArrayList(String resourcePath) throws Exception{
+    ArrayList<String[]> allData = new ArrayList<>();
+    File file = new File(resourcePath);
+    InputStream data;
+        try{
+            data = new FileInputStream(file);
+        }catch(Exception e){
+            throw e;
         }
-        return allData;
+    try (BufferedReader reader = new BufferedReader(new InputStreamReader(data))){
+        String line;
+        while ((line = reader.readLine()) != null) {
+            String[] thisRow = line.split(",");
+            allData.add(thisRow);
+        }
     }
+    return allData;
+}
 }

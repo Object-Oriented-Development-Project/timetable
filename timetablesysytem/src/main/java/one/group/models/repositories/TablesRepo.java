@@ -1,9 +1,12 @@
 package one.group.models.repositories;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 import one.group.models.enums.CSVTable;
 import one.group.models.user_timetable.CSVReader;
+import one.group.models.user_timetable.CSVWriter;
 /** Class to act as a repositoty for the information regarding the csv files used by the program. Uses static fields and methods. 
  * Includes methods to store each csv file as an ArrayList on boot, get methods only return copies.
  */
@@ -103,5 +106,35 @@ public class TablesRepo {
      */
     public static ArrayList<String[]> getTermsTable(){
         return new ArrayList<>(termsTable);
+    }
+
+    public static void addRowToAdminTable(String[] rowToAdd) throws FileNotFoundException{
+        adminTable.add(rowToAdd);
+        try {
+            File file = new File(CSVTable.ADMINS_TABLE_WRITE.filePath);
+            CSVWriter.writeToFile(file, adminTable);
+        } catch (FileNotFoundException e) {
+            throw e;
+        }
+    }
+
+    public static String[] parseInputsIntoRow(String s1, String s2, String s3){
+        String[] s = {s1, s2, s3};
+        return s;
+    }
+
+    public static String[] parseInputsIntoRow(String s1, String s2, String s3, String s4){
+        String[] s = {s1, s2, s3, s4};
+        return s;
+    }
+
+    public static String[] parseInputsIntoRow(String s1, String s2, String s3, String s4, String s5, String s6){
+        String[] s = {s1, s2, s3, s4, s5, s6};
+        return s;
+    }
+
+    public static String[] parseInputsIntoRow(String s1, String s2, String s3, String s4, String s5, String s6, String s7, String s8, String s9){
+        String[] s = {s1, s2, s3, s4, s5, s6, s7, s8, s9};
+        return s;
     }
 }

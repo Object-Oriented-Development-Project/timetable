@@ -1,5 +1,6 @@
 package one.group.viewer;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 import one.group.models.people.Admin;
@@ -34,8 +35,9 @@ public class Menu {
 
     /** Method containing the menus logic, if logout is selected the menu restarts, if quit is selected, the method returns false to signal to the controller to end the menu instance.
      * @return boolean whether or not to continue
+     * @throws FileNotFoundException 
      */
-    public boolean runMenu(){
+    public boolean runMenu() throws FileNotFoundException{
         
         user = null;
         admin = null;
@@ -94,11 +96,15 @@ public class Menu {
                         adminStatus = true;
                         System.out.printf("\nAdmin log in successful! \n");
                         go = false;
+                        }else{
+                            System.out.printf("Invalid input \n");
                         }
                     }
                 }            
             }else if(input.toUpperCase().equals("Q")){
                 return false;
+            }else{
+                System.out.printf("\nInvalid input: Please try again. \n");
             }
         }
 
@@ -168,12 +174,14 @@ public class Menu {
                     break;
                 }else if(input.equals("Q")){
                     return false;
+                }else{
+                    System.out.printf("\nInvalid input: Please try again. \n");
                 }
 
             //Admin branch.
             }else if(admin instanceof Admin){
                 System.out.printf
-                ("\nPlease select option: \nS)et term\nL)og out\nQ)uit\n");
+                ("\nPlease select option: \nS)et term\nU)update table\nL)og out\nQ)uit\n");
 
                 String input = scanner.nextLine();
                 input = input.toUpperCase();
@@ -189,13 +197,56 @@ public class Menu {
                     }else{
                         System.out.printf("\nError: Invalid input\n");
                     }
+                }else if (input.toUpperCase().equals("U")) {
+                    updateTable();
                 }else if (input.toUpperCase().equals("L")){
                     break;
                 }else if(input.toUpperCase().equals("Q")){
                     return false;
+                }else{
+                    System.out.printf("\nInvalid input: Please try again. \n");
                 }
             }
         }
         return true;
+    }
+
+    private void updateTable() throws FileNotFoundException{
+        System.out.printf
+        ("\nPlease select option: \nA)dmins\nC)ourses\nF)aculties\nL)ecturers\nM)odules\nR)ooms\nS)tudents\nT)erms\nE)xit\n");
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        input = input.toUpperCase();
+        if(input.equals("A")){
+            System.out.printf("Please enter admin ID: \n");
+            String id = scanner.nextLine().toUpperCase();
+            System.out.printf("Please enter admin e-mail: \n");
+            String email = scanner.nextLine().toUpperCase();
+            System.out.printf("Please enter admin password: \n");
+            String password = scanner.nextLine().toUpperCase();
+            try {
+                TablesRepo.addRowToAdminTable(TablesRepo.parseInputsIntoRow(id, email, password));
+            } catch (FileNotFoundException e) {
+                throw e;
+            }
+        }else if (input.equals("C")) {
+            
+        }else if (input.equals("F")) {
+            
+        }else if (input.equals("L")) {
+            
+        }else if (input.equals("M")) {
+            
+        }else if (input.equals("R")) {
+            
+        }else if (input.equals("S")) {
+            
+        }else if (input.equals("T")) {
+            
+        }else if(input.equals("E")){
+            
+        }else{
+            System.out.printf("Error: invalid input \n");
+        }
     }
 }
