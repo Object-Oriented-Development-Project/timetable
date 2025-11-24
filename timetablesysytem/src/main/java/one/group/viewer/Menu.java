@@ -97,7 +97,7 @@ public class Menu {
                         System.out.printf("\nAdmin log in successful! \n");
                         go = false;
                         }else{
-                            System.out.printf("Invalid input \n");
+                            System.out.printf("\nInvalid input \n");
                         }
                     }
                 }            
@@ -218,12 +218,12 @@ public class Menu {
         String input = scanner.nextLine();
         input = input.toUpperCase();
         if(input.equals("A")){
-            System.out.printf("Please enter admin ID: \n");
+            System.out.printf("\nPlease enter admin ID: \n");
             String id = scanner.nextLine().toUpperCase();
-            System.out.printf("Please enter admin e-mail: \n");
+            System.out.printf("\nPlease enter admin e-mail: \n");
             String email = scanner.nextLine().toUpperCase();
-            System.out.printf("Please enter admin password: \n");
-            String password = scanner.nextLine().toUpperCase();
+            System.out.printf("\nPlease enter admin password: \n");
+            String password = scanner.nextLine();
             try {
                 TablesRepo.addRowToAdminTable(TablesRepo.parseInputsIntoRow(id, email, password));
             } catch (FileNotFoundException e) {
@@ -246,7 +246,7 @@ public class Menu {
         }else if(input.equals("E")){
             
         }else{
-            System.out.printf("Error: invalid input \n");
+            System.out.printf("\nError: invalid input \n");
         }
     }
 }
