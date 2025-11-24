@@ -202,6 +202,7 @@ public class Menu {
                 }else if (input.toUpperCase().equals("L")){
                     break;
                 }else if(input.toUpperCase().equals("Q")){
+                    scanner.close();
                     return false;
                 }else{
                     System.out.printf("\nInvalid input: Please try again. \n");
@@ -214,7 +215,6 @@ public class Menu {
     private void updateTable() throws FileNotFoundException{
         System.out.printf
         ("\nPlease select option: \nA)dmins\nC)ourses\nF)aculties\nL)ecturers\nM)odules\nR)ooms\nS)tudents\nT)erms\nE)xit\n");
-        Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         input = input.toUpperCase();
         if(input.equals("A")){
