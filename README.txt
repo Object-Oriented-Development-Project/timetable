@@ -1,18 +1,11 @@
 //TIMETABLING APPLICATILON
-
-The timetable application currently functions essentially fully for the viewing of timetables for all relevant entities. It does not yet have any functionality for adding or removing entries.
-It adopts the Model Controller View structure.
-The program has a login system that determines the menu the user will be presented with after this stage.
-Users and Lecturers have the same options but with different methods being used for getting the User timetable.
-All entities that can have a timetable exist as a class and can be instantiated, they have fields corresponding to the entries in the CSV files, this allows for easy comparisons.
-The entries for the 'terms' csv file are in chronological order for using the days, the decision is that it will be easier to manage the adding of entries so that they are placed with an entry with the same day preceding it
-than it is to sort String[]'s in an array list every time the timetable is called to be printed.
-Interfaces Table and getID allow for the common methods required to generate a timetable from a csv file of data to be present in and overrided for unrelated classes.
-Enums DayOfWeek and CVSTable allow global access to information about their respective concerns using static fields and methods to prevent mismatched objects existing in the program.
-The Term class allows for the term to exist as a static variable which can be changed by the admin.
-The TablesRepo class allows for all the CSV files to be initialised and converted to ArrayList<String[]>'s on program start, it includes methods to return a copy of one of these arrays for operations, as not to create objects with mismatched data.
-
-The program currently allows a user to log in as a student, lecturer or admin. The user can log out to go to the starting menu and log in as a new user, they can also quit to terminate the app.
-Timetables can be viewed for rooms, modules, students, lecturers and courses. 
-Admin can set the term for the system and requires a password to log in that is case sensitive.
-All login details are converted to capital letters so match the CSV files, except the admin password.
+The timetable system is in its final stage of development now. The abillity to view timetables is fully implemented for all relevant entities. 
+The ability to add to a table, and then write this new table to the relevant csv file has been implemented for the admin table only at this time, 
+however the ability to do this for all other tables is a simple case of editing existing code to fit them individually and will be ready soon.
+A user can log in to the system with their ID, either student of lecturer. The admin login process requires the correct password to be entered, passwords are case sensitive.
+Timetables can be viewed for the following: The current user, a room specified by its number, a module specified with its code, a course specified with its code. There is no admin table.
+The program adopts the 'model controller viewer' model and adheres to it strictly.
+Invalid inputs in the menu are largely handled by a simple looping back to the last part of the menu the user reached, in some cases there is error messages (i.e for admin passwords).
+The admin user is the only user with access to the ability to add to tables or to set the current term for the system.
+This application is entirely based in the terminal and does not implement a GUI.
+The program allows a user to log out, and the ability to quit and terminate the app is available in the main menu and the post- user login menu.
