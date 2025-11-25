@@ -230,19 +230,107 @@ public class Menu {
                 throw e;
             }
         }else if (input.equals("C")) {
-            
+            System.out.printf("\nPlease enter course ID: \n");
+            String id = scanner.nextLine().toUpperCase();
+            System.out.printf("\nPlease enter number of years: \n");
+            String number = scanner.nextLine().toUpperCase();
+            System.out.printf("\nPlease enter the student count: \n");
+            String students = scanner.nextLine().toUpperCase();
+            System.out.printf("\nPlease enter the faculty: \n");
+            String faculty = scanner.nextLine().toUpperCase();
+            try {
+                TablesRepo.addRowToCoursesTable(TablesRepo.parseInputsIntoRow(id, number, students, faculty));
+            } catch (FileNotFoundException e) {
+                throw e;
+            }
         }else if (input.equals("F")) {
-            
+            System.out.printf("\nPlease enter faculty ID: \n");
+            String id = scanner.nextLine().toUpperCase();
+            System.out.printf("\nPlease enter the facultys name: \n");
+            String name = scanner.nextLine().toUpperCase();
+            System.out.printf("\nPlease enter the facultys building \n");
+            String building = scanner.nextLine().toUpperCase();
+            try {
+                TablesRepo.addRowToFacultyTable(TablesRepo.parseInputsIntoRow(id, name, building));
+            } catch (FileNotFoundException e) {
+                throw e;
+            }
         }else if (input.equals("L")) {
-            
+            System.out.printf("\nPlease enter lecturers ID: \n");
+            String id = scanner.nextLine().toUpperCase();
+            System.out.printf("\nPlease enter the lecturers name: \n");
+            String name = scanner.nextLine().toUpperCase();
+            System.out.printf("\nPlease enter the lecturers faculty \n");
+            String faculty = scanner.nextLine().toUpperCase();
+            try {
+                TablesRepo.addRowToLecturersTable(TablesRepo.parseInputsIntoRow(id, name, faculty));
+            } catch (FileNotFoundException e) {
+                throw e;
+            }
         }else if (input.equals("M")) {
-            
+            System.out.printf("\nPlease enter modules ID: \n");
+            String id = scanner.nextLine().toUpperCase().toUpperCase();
+            System.out.printf("\nPlease enter the lecturers ID for this module: \n");
+            String lecturer = scanner.nextLine().toUpperCase().toUpperCase();
+            System.out.printf("\nPlease enter the course ID for this module \n");
+            String courseID = scanner.nextLine().toUpperCase();
+            System.out.printf("\nPlease enter the lecture hours for this module \n");
+            String lectureHours = scanner.nextLine().toUpperCase();
+            System.out.printf("\nPlease enter the lab hours for this module \n");
+            String labHours = scanner.nextLine().toUpperCase();
+            System.out.printf("\nPlease enter the tutorial hours for this module \n");
+            String tutorialHours = scanner.nextLine().toUpperCase();
+            try {
+                TablesRepo.addRowToModulesTable(TablesRepo.parseInputsIntoRow(id, lecturer, courseID, lectureHours, labHours, tutorialHours));
+            } catch (FileNotFoundException e) {
+                throw e;
+            }
         }else if (input.equals("R")) {
-            
+            System.out.printf("\nPlease enter rooms ID: \n");
+            String id = scanner.nextLine().toUpperCase();
+            System.out.printf("\nPlease enter room type: \n");
+            String type = scanner.nextLine().toUpperCase();
+            System.out.printf("\nPlease enter the capacity: \n");
+            String capacity = scanner.nextLine().toUpperCase();
+            System.out.printf("\nPlease enter the bulding this room is in: \n");
+            String bulding = scanner.nextLine().toUpperCase();
+            try {
+                TablesRepo.addRowToRoomsTable(TablesRepo.parseInputsIntoRow(id, type, capacity, bulding));
+            } catch (FileNotFoundException e) {
+                throw e;
+            }
         }else if (input.equals("S")) {
-            
+            System.out.printf("\nPlease enter students ID: \n");
+            String id = scanner.nextLine().toUpperCase();
+            System.out.printf("\nPlease students name: \n");
+            String name = scanner.nextLine().toUpperCase();
+            System.out.printf("\nPlease enter the students course: \n");
+            String course = scanner.nextLine().toUpperCase();
+            System.out.printf("\nPlease enter the year of study for student: \n");
+            String year = scanner.nextLine().toUpperCase();
+            try {
+                TablesRepo.addRowToStudentsTable(TablesRepo.parseInputsIntoRow(id, name, course, year));
+            } catch (FileNotFoundException e) {
+                throw e;
+            }
         }else if (input.equals("T")) {
-            
+            System.out.printf("\nPlease enter the day for this event: \n");
+            String day = scanner.nextLine().toUpperCase();
+            System.out.printf("\nPlease enter the module id: \n");
+            String module = scanner.nextLine().toUpperCase();
+            System.out.printf("\nPlease enter the type of event \n");
+            String typeOfEvent = scanner.nextLine().toUpperCase();
+            System.out.printf("\nPlease enter the room for the event \n");
+            String room = scanner.nextLine().toUpperCase();
+            System.out.printf("\nPlease enter the time for event start \n");
+            String time = scanner.nextLine().toUpperCase();
+            System.out.printf("\nPlease enter the event length \n");
+            String length = scanner.nextLine().toUpperCase();
+            try {
+                TablesRepo.addRowToAdminTable(TablesRepo.parseInputsIntoRow(day, module, typeOfEvent, room, time, length));
+            } catch (FileNotFoundException e) {
+                throw e;
+            }
         }else if(input.equals("E")){
             
         }else{

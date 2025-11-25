@@ -111,8 +111,78 @@ public class TablesRepo {
     public static void addRowToAdminTable(String[] rowToAdd) throws FileNotFoundException{
         adminTable.add(rowToAdd);
         try {
-            File file = new File(CSVTable.ADMINS_TABLE_WRITE.filePath);
+            File file = new File(CSVTable.ADMINS_TABLE.filePath);
             CSVWriter.writeToFile(file, adminTable);
+        } catch (FileNotFoundException e) {
+            throw e;
+        }
+    }
+
+    public static void addRowToCoursesTable(String[] rowToAdd) throws FileNotFoundException{
+        coursesTable.add(rowToAdd);
+        try {
+            File file = new File(CSVTable.COURSES_TABLE.filePath);
+            CSVWriter.writeToFile(file, coursesTable);
+        } catch (FileNotFoundException e) {
+            throw e;
+        }
+    }
+    
+    public static void addRowToFacultyTable(String[] rowToAdd) throws FileNotFoundException{
+        facultiesTable.add(rowToAdd);
+        try {
+            File file = new File(CSVTable.FACULTIES_TABLE.filePath);
+            CSVWriter.writeToFile(file, facultiesTable);
+        } catch (FileNotFoundException e) {
+            throw e;
+        }
+    }
+
+    public static void addRowToLecturersTable(String[] rowToAdd) throws FileNotFoundException{
+        lecturersTable.add(rowToAdd);
+        try {
+            File file = new File(CSVTable.LECTURERS_TABLE.filePath);
+            CSVWriter.writeToFile(file, lecturersTable);
+        } catch (FileNotFoundException e) {
+            throw e;
+        }
+    }
+
+    public static void addRowToModulesTable(String[] rowToAdd) throws FileNotFoundException{
+        modulesTable.add(rowToAdd);
+        try {
+            File file = new File(CSVTable.MODULES_TABLE.filePath);
+            CSVWriter.writeToFile(file, modulesTable);
+        } catch (FileNotFoundException e) {
+            throw e;
+        }
+    }
+
+    public static void addRowToRoomsTable(String[] rowToAdd) throws FileNotFoundException{
+        roomsTable.add(rowToAdd);
+        try {
+            File file = new File(CSVTable.ROOMS_TABLE.filePath);
+            CSVWriter.writeToFile(file, roomsTable);
+        } catch (FileNotFoundException e) {
+            throw e;
+        }
+    }
+
+    public static void addRowToStudentsTable(String[] rowToAdd) throws FileNotFoundException{
+        studentsTable.add(rowToAdd);
+        try {
+            File file = new File(CSVTable.STUDENTS_TABLE.filePath);
+            CSVWriter.writeToFile(file, studentsTable);
+        } catch (FileNotFoundException e) {
+            throw e;
+        }
+    }
+
+    public static void addRowToTermsTable(String[] rowToAdd) throws FileNotFoundException{
+        adminTable.add(rowToAdd);
+        try {
+            File file = new File(CSVTable.TERMS_TABLE.filePath);
+            CSVWriter.writeToFile(file, termsTable);
         } catch (FileNotFoundException e) {
             throw e;
         }
