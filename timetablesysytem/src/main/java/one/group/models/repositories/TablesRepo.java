@@ -179,7 +179,7 @@ public class TablesRepo {
     }
 
     public static void addRowToTermsTable(String[] rowToAdd) throws FileNotFoundException{
-        adminTable.add(rowToAdd);
+        termsTable.add(rowToAdd);
         try {
             File file = new File(CSVTable.TERMS_TABLE.filePath);
             CSVWriter.writeToFile(file, termsTable);

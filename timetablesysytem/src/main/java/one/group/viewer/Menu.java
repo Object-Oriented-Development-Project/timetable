@@ -1,8 +1,12 @@
 package one.group.viewer;
 
 import java.io.FileNotFoundException;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Scanner;
 
+import one.group.models.enums.UniversityHours;
 import one.group.models.people.Admin;
 import one.group.models.people.Lecturer;
 import one.group.models.people.Person;
@@ -13,6 +17,7 @@ import one.group.models.repositories.TablesRepo;
 import one.group.models.rooms.Classroom;
 import one.group.models.rooms.Labroom;
 import one.group.models.rooms.Room;
+import one.group.models.term.Term;
 
 /** The class for the viewer segment of the programme. */
 public class Menu {
@@ -322,17 +327,38 @@ public class Menu {
             String typeOfEvent = scanner.nextLine().toUpperCase();
             System.out.printf("\nPlease enter the room for the event \n");
             String room = scanner.nextLine().toUpperCase();
+            System.out.printf("\nList of available times: \n");
+            ArrayList<String> hours = UniversityHours.getFreeHours(day, room);
+            System.out.printf("\n%s\n", hours.toString());
             System.out.printf("\nPlease enter the time for event start \n");
             String time = scanner.nextLine().toUpperCase();
-            System.out.printf("\nPlease enter the event length \n");
+            System.out.printf("\nPlease enter the event length; 1 or 2 (hours) \n");
             String length = scanner.nextLine().toUpperCase();
-            try {
-                TablesRepo.addRowToAdminTable(TablesRepo.parseInputsIntoRow(day, module, typeOfEvent, room, time, length));
-            } catch (FileNotFoundException e) {
-                throw e;
+            String timeInput = String.format
+            ("%d:00-%d:00", LocalTime.parse(time, DateTimeFormatter.ofPattern("HH:mm")).getHour(), 
+            LocalTime.parse(time, DateTimeFormatter.ofPattern("HH:mm")).getHour() + Integer.parseInt(length));
+            String lecturer;
+            String course;
+            String year;
+            if(hours.contains(time)){
+                String[] moduleDetails;
+                for(String[] row: TablesRepo.getModulesTable()){
+                    if(row[0].equals(module)){
+                        lecturer = row[1].toUpperCase();
+                        course = row[2].toUpperCase();
+                        year = row[3].toUpperCase();
+                        TablesRepo.addRowToTermsTable
+                        (TablesRepo.parseInputsIntoRow
+                            (day, timeInput, module, typeOfEvent, room, lecturer, course, year, 
+                                Integer.toString(Term.getTerm())));
+                    }
+                }
+                
+            }else{
+                System.out.printf("Invalid input: time unavailable.");
             }
         }else if(input.equals("E")){
-            
+            return;
         }else{
             System.out.printf("\nError: invalid input \n");
         }
