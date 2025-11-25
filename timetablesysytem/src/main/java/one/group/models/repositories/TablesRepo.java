@@ -45,7 +45,7 @@ public class TablesRepo {
     }
 
     /**
-     * Method to return the admins table
+     * Method to return the admins table.
      * @return adminTable the table of admins
      */
     public static ArrayList<String[]> getAdminTable(){
@@ -53,7 +53,7 @@ public class TablesRepo {
     }
 
     /**
-     * Method to return the admins table
+     * Method to return the admins table.
      * @return adminTable the table of admins
      */
     public static ArrayList<String[]> getCoursesTable(){
@@ -61,7 +61,7 @@ public class TablesRepo {
     }
 
     /**
-     * Method to return the admins table
+     * Method to return the admins table.
      * @return adminTable the table of admins
      */
     public static ArrayList<String[]> getFacultiesTable(){
@@ -69,7 +69,7 @@ public class TablesRepo {
     }
 
     /**
-     * Method to return the admins table
+     * Method to return the admins table.
      * @return adminTable the table of admins
      */
     public static ArrayList<String[]> getLecturersTable(){
@@ -77,7 +77,7 @@ public class TablesRepo {
     }
 
     /**
-     * Method to return the admins table
+     * Method to return the admins table.
      * @return adminTable the table of admins
      */
     public static ArrayList<String[]> getModulesTable(){
@@ -85,7 +85,7 @@ public class TablesRepo {
     }
 
     /**
-     * Method to return the admins table
+     * Method to return the admins table.
      * @return adminTable the table of admins
      */
     public static ArrayList<String[]> getRoomsTable(){
@@ -93,7 +93,7 @@ public class TablesRepo {
     }
 
     /**
-     * Method to return the admins table
+     * Method to return the admins table.
      * @return adminTable the table of admins
      */
     public static ArrayList<String[]> getStudentsTable(){
@@ -101,13 +101,18 @@ public class TablesRepo {
     }
 
     /**
-     * Method to return the terms table
+     * Method to return the terms table.
      * @return termsTable the table of admins
      */
     public static ArrayList<String[]> getTermsTable(){
         return new ArrayList<>(termsTable);
     }
 
+    /**
+     * Method to add a row to the admin table.
+     * @param rowToAdd
+     * @throws FileNotFoundException
+     */
     public static void addRowToAdminTable(String[] rowToAdd) throws FileNotFoundException{
         adminTable.add(rowToAdd);
         try {
@@ -118,6 +123,11 @@ public class TablesRepo {
         }
     }
 
+    /**
+     * Method to add a row to the courses table.
+     * @param rowToAdd
+     * @throws FileNotFoundException
+     */
     public static void addRowToCoursesTable(String[] rowToAdd) throws FileNotFoundException{
         coursesTable.add(rowToAdd);
         try {
@@ -128,6 +138,11 @@ public class TablesRepo {
         }
     }
     
+    /**
+     * Method to add a row to the faculties table.
+     * @param rowToAdd
+     * @throws FileNotFoundException
+     */
     public static void addRowToFacultyTable(String[] rowToAdd) throws FileNotFoundException{
         facultiesTable.add(rowToAdd);
         try {
@@ -138,6 +153,11 @@ public class TablesRepo {
         }
     }
 
+    /**
+     * Method to add a row to the lecturers table.
+     * @param rowToAdd
+     * @throws FileNotFoundException
+     */
     public static void addRowToLecturersTable(String[] rowToAdd) throws FileNotFoundException{
         lecturersTable.add(rowToAdd);
         try {
@@ -148,6 +168,11 @@ public class TablesRepo {
         }
     }
 
+    /**
+     * Method to add a row to the modules table.
+     * @param rowToAdd
+     * @throws FileNotFoundException
+     */
     public static void addRowToModulesTable(String[] rowToAdd) throws FileNotFoundException{
         modulesTable.add(rowToAdd);
         try {
@@ -158,6 +183,11 @@ public class TablesRepo {
         }
     }
 
+    /**
+     * Method to add a row to the rooms table.
+     * @param rowToAdd
+     * @throws FileNotFoundException
+     */
     public static void addRowToRoomsTable(String[] rowToAdd) throws FileNotFoundException{
         roomsTable.add(rowToAdd);
         try {
@@ -168,6 +198,11 @@ public class TablesRepo {
         }
     }
 
+    /**
+     * Method to add a row to the students table.
+     * @param rowToAdd
+     * @throws FileNotFoundException
+     */
     public static void addRowToStudentsTable(String[] rowToAdd) throws FileNotFoundException{
         studentsTable.add(rowToAdd);
         try {
@@ -178,6 +213,11 @@ public class TablesRepo {
         }
     }
 
+    /**
+     * Method to add a row to the terms table.
+     * @param rowToAdd
+     * @throws FileNotFoundException
+     */
     public static void addRowToTermsTable(String[] rowToAdd) throws FileNotFoundException{
         termsTable.add(rowToAdd);
         try {
@@ -188,21 +228,59 @@ public class TablesRepo {
         }
     }
 
+    /**
+     * Method to parse individual String's into a 1D array of type String.
+     * @param s1
+     * @param s2
+     * @param s3
+     * @return Array of type String
+     */
     public static String[] parseInputsIntoRow(String s1, String s2, String s3){
         String[] s = {s1, s2, s3};
         return s;
     }
 
+    /**
+     * Method to parse individual String's into a 1D array of type String.
+     * @param s1
+     * @param s2
+     * @param s3
+     * @param s4
+     * @return Array of type String
+     */
     public static String[] parseInputsIntoRow(String s1, String s2, String s3, String s4){
         String[] s = {s1, s2, s3, s4};
         return s;
     }
 
+    /**
+     * Method to parse individual String's into a 1D array of type String.
+     * @param s1
+     * @param s2
+     * @param s3
+     * @param s4
+     * @param s5
+     * @param s6
+     * @return Array of type String
+     */
     public static String[] parseInputsIntoRow(String s1, String s2, String s3, String s4, String s5, String s6){
         String[] s = {s1, s2, s3, s4, s5, s6};
         return s;
     }
 
+    /**
+     * Method to parse individual String's into a 1D array of type String.
+     * @param s1
+     * @param s2
+     * @param s3
+     * @param s4
+     * @param s5
+     * @param s6
+     * @param s7
+     * @param s8
+     * @param s9
+     * @return Array of type String
+     */
     public static String[] parseInputsIntoRow(String s1, String s2, String s3, String s4, String s5, String s6, String s7, String s8, String s9){
         String[] s = {s1, s2, s3, s4, s5, s6, s7, s8, s9};
         return s;

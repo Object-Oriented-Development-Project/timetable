@@ -19,7 +19,7 @@ import one.group.models.rooms.Labroom;
 import one.group.models.rooms.Room;
 import one.group.models.term.Term;
 
-/** The class for the viewer segment of the programme. */
+/** Class for the viewer segment of the programme. */
 public class Menu {
     /** Person the user for this interaction */
     private Person user;
@@ -217,6 +217,9 @@ public class Menu {
         return true;
     }
 
+    /** 
+     * This method handles the updating of tables within the menu. Functionally, it is a submenu.
+     */
     private void updateTable() throws FileNotFoundException{
         System.out.printf
         ("\nPlease select option: \nA)dmins\nC)ourses\nF)aculties\nL)ecturers\nM)odules\nR)ooms\nS)tudents\nT)erms\nE)xit\n");
@@ -341,7 +344,6 @@ public class Menu {
             String course;
             String year;
             if(hours.contains(time)){
-                String[] moduleDetails;
                 for(String[] row: TablesRepo.getModulesTable()){
                     if(row[0].equals(module)){
                         lecturer = row[1].toUpperCase();

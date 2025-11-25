@@ -3,7 +3,6 @@ package one.group.models.user_timetable;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -23,9 +22,9 @@ public class CSVReader {
      * Reads a CSV file line by line and returns its contents as a list of strings.
      * Each line becomes a single string in the list.
      *
-     * @param filePath the path to the CSV file
+     * @param resourcePath the path to the CSV file
      * @return allData a list of strings representing each line in the CSV
-     * @throws FileNotFoundException if the specified file does not exist
+     * @throws Exception if the specified file does not exist
      */
     public static ArrayList<String[]> readToArrayList(String resourcePath) throws Exception{
     ArrayList<String[]> allData = new ArrayList<>();
@@ -44,5 +43,5 @@ public class CSVReader {
         }
     }
     return allData;
-}
+    }
 }

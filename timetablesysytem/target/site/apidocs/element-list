@@ -1,0 +1,11 @@
+one.group.controller
+one.group.models.enums
+one.group.models.events
+one.group.models.interfaces
+one.group.models.people
+one.group.models.programmes
+one.group.models.repositories
+one.group.models.rooms
+one.group.models.term
+one.group.models.user_timetable
+one.group.viewer

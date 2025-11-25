@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import one.group.models.repositories.TablesRepo;
 import one.group.models.term.Term;
 
-/** The class to represent a student. */
+/** Class to represent a student. */
 public class Student extends Person {
     /** String to represent the course of the student. */
     private String courseID;
@@ -62,7 +62,7 @@ public class Student extends Person {
 
     /**
      *  Method to print the students table.
-     * @param tableToPrint
+     * @param tableToPrint the table to be printed
      */
     @Override
     public void printTable(ArrayList<String[]> tableToPrint){

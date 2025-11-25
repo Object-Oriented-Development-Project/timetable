@@ -12,8 +12,8 @@ public class CSVWriter{
 
     /**
      * Method to write the input String to the target csv file.
-     * @param input the String to input
-     * @param fileToUpdate the target file to write to
+     * @param file the target file to write to
+     * @param table the table to input
      * @throws FileNotFoundException throws this if no file found at the filepath given
      */
     public static void writeToFile(File file, ArrayList<String[]> table) throws FileNotFoundException {

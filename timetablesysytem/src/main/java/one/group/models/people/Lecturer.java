@@ -5,13 +5,14 @@ import java.util.ArrayList;
 import one.group.models.repositories.TablesRepo;
 import one.group.models.term.Term;
 
-/** The class to represent a lecturer. */
+/** Class to represent a lecturer. */
 public class Lecturer extends Person {
     private String faculty;
     /**
      * Creates a Lecturer with the given name and id.
      * @param name the lecturer's name
      * @param id the lecturer's id
+     * @param faculty the faculty the lecturer belongs to
      */
     public Lecturer(String name, String id, String faculty){
         super(name, id);
@@ -51,7 +52,7 @@ public class Lecturer extends Person {
 
     /**
      *  Method to print the lecturers table.
-     * @param tableToPrint
+     * @param tableToPrint the table to be printed
      */
     @Override
     public void printTable(ArrayList<String[]> tableToPrint){

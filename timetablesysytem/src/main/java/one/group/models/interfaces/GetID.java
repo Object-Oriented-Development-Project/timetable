@@ -4,6 +4,7 @@ public interface GetID {
     
     /**
      * Method to retrieve ID.
+     * @return String representing an entities ID
      */
     public String getID();
 }

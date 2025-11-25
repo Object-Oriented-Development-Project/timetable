@@ -6,7 +6,7 @@ import one.group.models.interfaces.GetID;
 import one.group.models.interfaces.Table;
 
 /**
- * The base abstract class for representing a person.
+ * Abstract class representing a person.
  */
  public abstract class Person implements GetID, Table{
     /** The name of the person. */
@@ -60,7 +60,7 @@ import one.group.models.interfaces.Table;
 
     /**
      * Method to access a users table.
-     * @return
+     * @return the users table
      */
     @Override
     public ArrayList<String[]> accessTable(){

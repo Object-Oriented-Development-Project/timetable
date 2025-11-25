@@ -3,7 +3,7 @@ import java.io.FileNotFoundException;
 
 import one.group.viewer.Menu;
 
-/** The class for the controller segment of the programme. */
+/** Class for the controller segment of the programme. */
 public class Run {
     /**
      * The main method for the controller.

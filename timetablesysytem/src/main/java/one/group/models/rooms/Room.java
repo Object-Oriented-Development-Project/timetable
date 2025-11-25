@@ -65,6 +65,7 @@ public abstract class Room implements GetID, Table{
 
     /**
      * Method to set the table of the room to the given one.
+     * @param newArrayList the new table containg updated info
      */
     @Override
     public void setTable(ArrayList<String[]> newArrayList){
@@ -97,7 +98,7 @@ public abstract class Room implements GetID, Table{
 
     /**
      *  Method to print the rooms table.
-     * @param tableToPrint
+     * @param tableToPrint the table to be printed
      */
     @Override
     public void printTable(ArrayList<String[]> tableToPrint){

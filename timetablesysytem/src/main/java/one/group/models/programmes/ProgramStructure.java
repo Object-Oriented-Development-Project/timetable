@@ -127,7 +127,7 @@ public class ProgramStructure implements GetID, Table{
 
     /**
      * Method to access a courses table.
-     * @return
+     * @return the courses table
      */
     @Override
     public ArrayList<String[]> accessTable(){
@@ -168,7 +168,7 @@ public class ProgramStructure implements GetID, Table{
 
     /**
      *  Method to print the courses table.
-     * @param tableToPrint
+     * @param tableToPrint the table to be printed
      */
     @Override
     public void printTable(ArrayList<String[]> tableToPrint){
