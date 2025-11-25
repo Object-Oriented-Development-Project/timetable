@@ -1,4 +1,4 @@
-//TIMETABLING APPLICATILON
+//TIMETABLE APPLICATILON
 The timetable system is in its final stage of development now. The abillity to view timetables is fully implemented for all relevant entities. 
 The ability to add to a table, and then write this new table to the relevant csv file has been implemented for all tables. 
 The option to add to an event to the master timetable ('Terms') lists the available start times for the room on the selected day, it does not currently account for the alloted hours of the event running through one scheduled after the start time. There was no more time to implement this properly.
