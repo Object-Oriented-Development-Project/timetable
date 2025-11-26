@@ -69,6 +69,7 @@ public class Menu {
                         user = new Student(row[1], input, row[2], Integer.parseInt(row[3]));
                         System.out.printf("\nStudent log in successful!\n");
                         go = false;
+                        break;
                     }
                 }
             }else if(input.toUpperCase().equals("T")){
@@ -82,6 +83,7 @@ public class Menu {
                         user = new Lecturer(row[1], input , row[2]);
                         System.out.printf("\nLecturer log in successful!\n");
                         go = false;
+                        break;
                     }
                 }
             }else if(input.toUpperCase().equals("A")){
@@ -101,6 +103,7 @@ public class Menu {
                         adminStatus = true;
                         System.out.printf("\nAdmin log in successful! \n");
                         go = false;
+                        break;
                         }else{
                             System.out.printf("\nInvalid input \n");
                         }
@@ -176,6 +179,7 @@ public class Menu {
                     course.printTable(course.getTable());
                     System.out.println();
                 }else if(input.equals("L")){
+                    user = null;
                     break;
                 }else if(input.equals("Q")){
                     return false;
@@ -205,6 +209,7 @@ public class Menu {
                 }else if (input.toUpperCase().equals("U")) {
                     updateTable();
                 }else if (input.toUpperCase().equals("L")){
+                    user = null;
                     break;
                 }else if(input.toUpperCase().equals("Q")){
                     scanner.close();
