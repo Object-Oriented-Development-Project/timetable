@@ -293,7 +293,7 @@ public class Menu {
         }else if (input.equals("R")) {
             System.out.printf("\nPlease enter rooms ID: \n");
             String id = scanner.nextLine().toUpperCase();
-            System.out.printf("\nPlease enter room type: \n");
+            System.out.printf("\nPlease enter room type: ('TEACHING' OR 'LAB') \n");
             String type = scanner.nextLine().toUpperCase();
             System.out.printf("\nPlease enter the capacity: \n");
             String capacity = scanner.nextLine().toUpperCase();
