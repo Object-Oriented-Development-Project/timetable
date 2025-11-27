@@ -147,7 +147,6 @@ public class Menu {
                                 System.out.println();
                             }else{
                                 room = new Labroom(input, Integer.parseInt(row[2]), row[3]);
-                                room = new Classroom(input, Integer.parseInt(row[2]), row[3]);
                                 System.out.println();
                                 room.printTable(room.getTable());
                                 System.out.println();
@@ -332,11 +331,11 @@ public class Menu {
                 throw e;
             }
         }else if (input.equals("T")) {
-            System.out.printf("\nPlease enter the day for this event: \n");
+            System.out.printf("\nPlease enter the day for this event: (FORMAT: MON, TUE ETC.) \n");
             String day = scanner.nextLine().toUpperCase();
             System.out.printf("\nPlease enter the module id: \n");
             String module = scanner.nextLine().toUpperCase();
-            System.out.printf("\nPlease enter the type of event \n");
+            System.out.printf("\nPlease enter the type of event (TEACHING / LAB) \n");
             String typeOfEvent = scanner.nextLine().toUpperCase();
             System.out.printf("\nPlease enter the room for the event \n");
             String room = scanner.nextLine().toUpperCase();
