@@ -142,14 +142,19 @@ public class Menu {
                         if(row[0].equals(input)){
                             if(row[1].equals("TEACHING")){
                                 room = new Classroom(input, Integer.parseInt(row[2]), row[3]);
+                                System.out.println();
+                                room.printTable(room.getTable());
+                                System.out.println();
                             }else{
                                 room = new Labroom(input, Integer.parseInt(row[2]), row[3]);
+                                room = new Classroom(input, Integer.parseInt(row[2]), row[3]);
+                                System.out.println();
+                                room.printTable(room.getTable());
+                                System.out.println();
                             } 
                         }
                     }
-                    System.out.println();
-                    room.printTable(room.getTable());
-                    System.out.println();
+                    
                 }else if (input.equals("M")){
 
                     System.out.printf("\nPlease enter the module ID: \n");
@@ -159,11 +164,11 @@ public class Menu {
                     for(String[] row: TablesRepo.getModulesTable()){
                         if(row[0].equals(input)){
                             module = new Module(row[0], row[1], row[2], row[3], row[4], row[5]);
+                            System.out.println();
+                            module.printTable(module.getTable());
+                            System.out.println();
                         }
                     }
-                    System.out.println();
-                    module.printTable(module.getTable());
-                    System.out.println();
                 }else if (input.equals("C")){
                     
                     System.out.printf("\nPlease enter course ID: \n");
@@ -173,11 +178,11 @@ public class Menu {
                     for(String[] row: TablesRepo.getCoursesTable()){
                         if(row[0].equals(input)){
                             course = new ProgramStructure(row[0], Integer.parseInt(row[1]), Integer.parseInt(row[2]), row[3]);
+                            System.out.println();
+                            course.printTable(course.getTable());
+                            System.out.println();
                         }
                     }
-                    System.out.println();
-                    course.printTable(course.getTable());
-                    System.out.println();
                 }else if(input.equals("L")){
                     user = null;
                     break;
