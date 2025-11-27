@@ -1,11 +1,9 @@
 package one.group.models.programmes;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import one.group.models.interfaces.GetID;
 import one.group.models.interfaces.Table;
-import one.group.models.people.Lecturer;
 import one.group.models.repositories.TablesRepo;
 import one.group.models.term.Term;
 
@@ -15,10 +13,6 @@ public class ProgramStructure implements GetID, Table{
     private String CourseID;
     /** The name of the course. */
     private String courseName;
-    /** The list of modules for the course. */
-    private List<Module> modules;
-    /** The list of lecturers associated with the course. */
-    private List<Lecturer> lecturers;
     /** The number of students associated with the course. */
     private int students;
     /** The number of years for the course. */
@@ -73,38 +67,6 @@ public class ProgramStructure implements GetID, Table{
     */
     public void setCourseName(String newName){
         courseName = newName;
-    }
-
-    /**
-    * Returns a copy of modules.
-    * @return modules a copy of modules
-    */
-    public List<Module> getModules(){
-        return List.copyOf(modules);
-    }
-
-    /**
-    * Returns the reference to modules.
-    * @return modules the list of modules
-    */
-    public List<Module> getModulesEdit(){
-        return modules;
-    }
-
-    /**
-    * Returns a copy of lecturers.
-    * @return lecturers a copy of lecturers
-    */
-    public List<Lecturer> getLecturers(){
-        return List.copyOf(lecturers);
-    }
-
-    /**
-    * Returns the reference to lecturers.
-    * @return lecturers the list of lecturers
-    */
-    public List<Lecturer> getLecturersEdit(){
-        return lecturers;
     }
 
     /**
