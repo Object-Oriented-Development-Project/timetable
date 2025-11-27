@@ -1,6 +1,5 @@
 one.group.controller
 one.group.models.enums
-one.group.models.events
 one.group.models.interfaces
 one.group.models.people
 one.group.models.programmes
