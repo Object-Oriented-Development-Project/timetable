@@ -1,7 +1,7 @@
-//TIMETABLING APPLICATILON
+//TIMETABLE APPLICATILON
 The timetable system is in its final stage of development now. The abillity to view timetables is fully implemented for all relevant entities. 
-The ability to add to a table, and then write this new table to the relevant csv file has been implemented for all tables except for the terms at this point, 
-however the ability to do this for all other tables is a simple case of editing existing code to fit them individually and will be ready soon.
+The ability to add to a table, and then write this new table to the relevant csv file has been implemented for all tables. 
+The option to add to an event to the master timetable ('Terms') lists the available start times for the room on the selected day, it does not currently account for the alloted hours of the event running through one scheduled after the start time. There was no more time to implement this properly.
 A user can log in to the system with their ID, either student or lecturer. The admin login process requires the correct password to be entered, passwords are case sensitive.
 Timetables can be viewed for the following: The current user, a room specified by its number, a module specified with its code, a course specified with its code. There is no admin table.
 The program adopts the 'model controller viewer' model and adheres to it strictly.
