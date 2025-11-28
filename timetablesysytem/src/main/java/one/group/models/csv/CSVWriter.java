@@ -1,4 +1,4 @@
-package one.group.models.user_timetable;
+package one.group.models.csv;
 
 import java.io.File;
 import java.io.FileNotFoundException;

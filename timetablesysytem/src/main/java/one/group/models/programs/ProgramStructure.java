@@ -1,4 +1,4 @@
-package one.group.models.programmes;
+package one.group.models.programs;
 
 import java.util.ArrayList;
 

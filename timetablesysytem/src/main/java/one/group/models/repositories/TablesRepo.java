@@ -4,9 +4,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
+import one.group.models.csv.CSVReader;
+import one.group.models.csv.CSVWriter;
 import one.group.models.enums.CSVTable;
-import one.group.models.user_timetable.CSVReader;
-import one.group.models.user_timetable.CSVWriter;
 /** Class to act as a repositoty for the information regarding the csv files used by the program. Uses static fields and methods. 
  * Includes methods to store each csv file as an ArrayList on boot, get methods only return copies.
  */
