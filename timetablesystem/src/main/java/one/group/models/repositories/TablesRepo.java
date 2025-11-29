@@ -53,48 +53,48 @@ public class TablesRepo {
     }
 
     /**
-     * Method to return the admins table.
-     * @return adminTable the table of admins
+     * Method to return the courses table.
+     * @return adminTable the table of courses
      */
     public static ArrayList<String[]> getCoursesTable(){
         return new ArrayList<>(coursesTable);
     }
 
     /**
-     * Method to return the admins table.
-     * @return adminTable the table of admins
+     * Method to return the faculties table.
+     * @return adminTable the table of faculties
      */
     public static ArrayList<String[]> getFacultiesTable(){
         return new ArrayList<>(facultiesTable);
     }
 
     /**
-     * Method to return the admins table.
-     * @return adminTable the table of admins
+     * Method to return the lecturers table.
+     * @return adminTable the table of lecturers
      */
     public static ArrayList<String[]> getLecturersTable(){
         return new ArrayList<>(lecturersTable);
     }
 
     /**
-     * Method to return the admins table.
-     * @return adminTable the table of admins
+     * Method to return the modules table.
+     * @return adminTable the table of modules
      */
     public static ArrayList<String[]> getModulesTable(){
         return new ArrayList<>(modulesTable);
     }
 
     /**
-     * Method to return the admins table.
-     * @return adminTable the table of admins
+     * Method to return the rooms table.
+     * @return adminTable the table of rooms
      */
     public static ArrayList<String[]> getRoomsTable(){
         return new ArrayList<>(roomsTable);
     }
 
     /**
-     * Method to return the admins table.
-     * @return adminTable the table of admins
+     * Method to return the students table.
+     * @return adminTable the table of students
      */
     public static ArrayList<String[]> getStudentsTable(){
         return new ArrayList<>(studentsTable);
@@ -102,7 +102,7 @@ public class TablesRepo {
 
     /**
      * Method to return the terms table.
-     * @return termsTable the table of admins
+     * @return termsTable the table of terms
      */
     public static ArrayList<String[]> getTermsTable(){
         return new ArrayList<>(termsTable);
